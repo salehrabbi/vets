@@ -3,5 +3,28 @@ extends layouts/app.jade
 block title
   title Home
 
+block header
+  include partials/header-login.jade
+
 block main
-  
+  #accordionExample.accordion
+    .card
+      #headingOne.card-header
+        h2.mb-0
+          button.btn.btn-link.color-boulder(type='button' data-toggle='collapse' data-target='#collapseOne' aria-expanded='true' aria-controls='collapseOne')
+            | Design Patient
+      #collapseOne.collapse.show(aria-labelledby='headingOne' data-parent='#accordionExample')
+        .card-body
+          .d-grid.pages-list(style="grid-template-columns: repeat(5, 1fr); grid-gap: 15px;")
+            each val, index in ['patient-sign-up', 'patient-onboarding-1', 'patient-onboarding-2', 'patient-mathing-counselors','patient-chosse-counselor','patient-chosse-timeslot','patient-consultation']
+              .item
+                a(href= val +".html" target="_blank")
+                  img(src="screenshot/"+ val +".jpg" alt="")
+    .card
+      #headingTwo.card-header
+        h2.mb-0
+          button.btn.btn-link.collapsed(type='button' data-toggle='collapse' data-target='#collapseTwo' aria-expanded='false' aria-controls='collapseTwo')
+            | Collapsible Group Item #2
+      #collapseTwo.collapse(aria-labelledby='headingTwo' data-parent='#accordionExample')
+        .card-body
+          | Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.

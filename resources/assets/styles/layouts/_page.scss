@@ -1,0 +1,209 @@
+// ======================= sign-up
+.sign-up {
+  .item {
+    max-width: 390px;
+    border-radius: 10px;
+    h1 {
+      font-size: em(40px);
+      line-height: (47/40);
+      margin-bottom: calc-em(20, 40);
+    }
+    h3 {
+      font-size: em(22px);
+      line-height: (26/22);
+      margin-bottom: calc-em(15, 22);
+    }
+  }
+  form {
+    .d-grid {
+      grid-template-columns: 1fr em(15px) 1fr;
+      grid-column-gap: 8px;
+    }
+  }
+}
+// =============================== .onboarding
+
+.onboarding {
+  .question {
+    .d-grid {
+      grid-template-columns: auto auto;
+      grid-column-gap: em(30px);
+    }
+  }
+}
+// =========================== .form-step
+.form-step {
+  position: relative;
+  max-width: 850px;
+  .step-border {
+    background-image: linear-gradient(to right, transparent 50%, #c6c9d1 50%);
+    height: 1px;
+    background-size: em(20px) 100%;
+    position: absolute;
+    width: 75%;
+    top: 15px;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+  .d-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .step-part {
+    .step-number {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    &.active {
+      .step-number {
+        background: $crimson;
+        &:before {
+          content: "";
+          opacity: 0.2;
+          width: 140%;
+          height: 140%;
+          background: $crimson;
+          position: absolute;
+          top: 50%;
+          margin-top: -70%;
+          border-radius: 50%;
+        }
+        &:after {
+          content: "";
+          position: absolute;
+          width: 173%;
+          height: 173%;
+          background: $crimson;
+          opacity: 0.1;
+          top: 50%;
+          margin-top: -86.67%;
+          border-radius: 50%;
+        }
+      }
+      .title {
+        color: $cloud-burst;
+      }
+    }
+  }
+}
+
+// ========================== .mathin-counselor
+.mathin-counselor-content {
+  min-height: 600px;
+}
+// ============================== choose-counselor
+.choose-counselor {
+  max-width: 890px;
+  .item {
+    background: #f4f4f6;
+    border-radius: 5px;
+    padding: em(30px);
+    margin-bottom: em(30px);
+    border: 1px solid transparent;
+    .avator {
+      img {
+        height: em(80px);
+        width: em(80px);
+        border-radius: 8px;
+        margin-right: em(30px);
+      }
+    }
+    .title {
+      font-size: em(22px);
+    }
+    .d-grid {
+      grid-template-columns: auto auto;
+      grid-column-gap: em(30px);
+    }
+    &.active {
+      background: transparent;
+      border-color: #e4e7ef;
+      .bg-white {
+        background-color: $alabaster !important;
+      }
+      .bg-chestnut {
+        background: $tamarillo;
+      }
+    }
+    .input-submit {
+      min-height: 40px;
+      font-size: (12px);
+      &:hover {
+        background: #1c2945 !important;
+      }
+    }
+  }
+}
+// ================================= .choose-timeslot-content
+.choose-timeslot-content {
+  max-width: 570px;
+  padding-top: em(80px);
+  form {
+    .input-relative {
+      position: relative;
+      i {
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: rgba(64, 64, 64, 0.5);
+        right: 20px;
+        top: 12px;
+      }
+    }
+    .d-grid {
+      display: grid;
+      grid-template-columns: 1fr em(90px);
+      grid-column-gap: 30px;
+      grid-row-gap: 20px;
+    }
+  }
+}
+.book-time-controll {
+  border-bottom: 1px solid #d5d5d5;
+  .arrow {
+    background: #f8f8f8;
+    border-radius: 5px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 30px;
+    color: #797979;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover {
+      background: $cloud-burst;
+      color: #fff;
+    }
+  }
+}
+.time-slot-radio {
+  .radio {
+    background: #f4f4f6;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding: 7px 20px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    color: rgba(64, 64, 64, 0.7);
+    font-size: 16px;
+    &.checked {
+      background: none;
+      border-color: #e4e7ef;
+      color: $cloud-burst;
+    }
+  }
+}
+// ================================== .consltation-content
+.consltation-content {
+  .item {
+    max-width: 330px;
+    padding: 45px;
+  }
+}

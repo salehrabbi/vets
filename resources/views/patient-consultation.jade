@@ -1,0 +1,31 @@
+extends layouts/app.jade
+
+block title
+  title Patient Consultation
+
+block main
+  .space
+    .container
+      .form-step.mx-auto
+        .step-border
+        .d-grid.text-center.font-medium.font-weight-bold.ff-work
+          each val, index in ['Matching Clinicians', 'Choose Clinician', 'Choose Timeslot', 'Consultation']
+            - var className = (index == 3) ? 'active' : ''
+            .step-part(class=className)
+              .mx-auto.step-number.color-white.bg-manatee.mb-3= index+1
+              .title.color-manatee= val
+      .choose-counselor.consltation-content.mx-auto.pt-5
+        .row.pt-5
+          .col-md-12.text-center
+            h3.color-cloud-burst Consultation Booked
+            p.color-tundora.mx-auto.mb-4(style="max-width: 370px;") You will get an email 30 minutes before, to remind you about booking.
+            .item.mx-auto
+              .avator
+                .img.mb-4
+                  img.mr-0(src="dist/images/counsilor.png" alt="")
+                .text
+                  a.title.color-cloud-burst.font-weight-bold.ff-work(href="#") Dr. Peter Kirkpatrick
+                  p.m-0.color-tundora.font-medium.mt-2
+                    <i class="fas fa-map-marker-alt color-crimson mr-2"></i>
+                    | London  
+                  p.color-tundora.mt-2.mb-0 Monday 29th October 10:00 am  

@@ -1,0 +1,20 @@
+extends layouts/app.jade
+
+block title
+  title Mathing Counselors
+
+block main
+  .space
+    .container
+      .form-step.mx-auto
+        .step-border
+        .d-grid.text-center.font-medium.font-weight-bold.ff-work
+          each val, index in ['Matching Clinicians', 'Choose Clinician', 'Choose Timeslot', 'Consultation']
+            - var className = (index == 0) ? 'active' : ''
+            .step-part(class=className)
+              .mx-auto.step-number.color-white.bg-manatee.mb-3= index+1 
+              .title.color-manatee= val
+      .py-5.text-center.d-flex.mathin-counselor-content.align-items-center.justify-content-center.flex-column
+        img(src="dist/images/logo-2.png" alt="")
+        h1.color-cloud-burst.mt-4 Matching Clinicians
+        p.mx-auto.font-big.color-tundora(style="max-width: 570px;") We are finding the perfect clinician for you, it may take some time... We will send you an email notification when complete.        

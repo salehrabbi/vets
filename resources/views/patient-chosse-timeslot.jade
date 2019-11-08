@@ -1,0 +1,43 @@
+extends layouts/app.jade
+
+block title
+  title Patient Choose Timeslot
+
+block main
+  .space
+    .container
+      .form-step.mx-auto
+        .step-border
+        .d-grid.text-center.font-medium.font-weight-bold.ff-work
+          each val, index in ['Matching Clinicians', 'Choose Clinician', 'Choose Timeslot', 'Consultation']
+            - var className = (index == 2) ? 'active' : ''
+            .step-part(class=className)
+              .mx-auto.step-number.color-white.bg-manatee.mb-3= index+1
+              .title.color-manatee= val
+      .choose-timeslot-content.mx-auto
+        form(action="#")
+          label.color-cloud-burst.font-weight-bold.ff-work(for="calender") Search for a specific date:
+          .d-grid
+            .input-relative
+              <input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="Day/Month/Year">
+              <i class="fas fa-calendar-alt"></i>
+            .ff-work.input-submit.bg-tamarillo.font-weight-bold.text-uppercase.color-white.font-medium(type="submit") 
+              | Go
+          .book-time-controll.pb-2.pt-4.mt-2
+            .row.align-items-center
+              .col-md-6
+                h4.color-cloud-burst.m-0 Monday 29th October
+              .col-md-6.text-right
+                .arrow.d-inline-block.mr-2
+                  <i class="fal fa-angle-left"></i>  
+                .arrow.d-inline-block
+                  <i class="fal fa-angle-right"></i> 
+          .row.time-slot-radio
+            - for(var x=0; x<8; x++)
+              - var className = (x == 2) ? 'checked' : ''
+              .col-md-6
+                label.radio.d-flex.align-items-center(for="Patient" + x class=className)
+                  input(type="radio" id="Patient" + x name="gender" value="male")
+                  .icon
+                    .squar
+                  span 09:00 am       
