@@ -102,6 +102,13 @@ h4 {
   }
 }
 // ================================= button
+.button-hover {
+  transition: 0.3s;
+  &:hover {
+    background: $cloud-burst;
+    color: #fff;
+  }
+}
 .button-head {
   font-size: em(12px);
   text-transform: capitalize;
@@ -141,6 +148,15 @@ h4 {
 }
 .or {
   font-size: em(12px);
+}
+.input-file {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  padding: 2px 10px;
+  border-radius: 50px;
+  cursor: pointer;
 }
 // ======================================== form
 .radio {

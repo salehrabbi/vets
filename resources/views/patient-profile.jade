@@ -1,0 +1,35 @@
+extends layouts/app.jade
+
+block title
+  title Patient Profile
+
+block main
+  .space
+    .container
+      .patient-profile.mx-auto
+        .row
+          form.col-12(action="#")
+            .upload.d-grid  
+              .img
+                img(src="dist/images/profile.png" alt="")
+              .text
+                p.font-weight-bold.ff-work.color-cloud-burst Upload a profile file:
+                label.w-100(for="file")
+                  span.button-hover.w-100.input-file.btn.bg-alabaster.ff-work.font-small.font-weight-bold.color-boulder
+                    <i class="fas fa-file-image mr-2"></i>
+                    | Select file
+                  input(type="file" id="file" name="profile")
+            h4.color-cloud-burst.ff-work.mt-4.pt-3.mb-3 Profile details 
+            label.w-100(for="name") 
+              span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Name:
+              input.input-text.w-100(type="text" id="name" placeholder="Your full name")
+            label.w-100(for="Town") 
+              span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Town/city:
+              input.input-text.w-100(type="text" id="Town" placeholder="Your current location") 
+            label.w-100(for="Hobbies") 
+              span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Hobbies:
+              input.input-text.w-100(type="text" id="Hobbies" placeholder="What do you like to do?")
+            label.w-100(for="textarea") 
+              span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Bio, tell us about yourself:
+              <textarea class="input-textarea" id="textarea" placeholder="Tell about yourself, for better consultation"></textarea> 
+            button.btn.input-submit.bg-tamarillo.color-white.font-weight-bold.ff-work.text-uppercase.font-medium.mt-3(type="submit" style="min-width: 200px") save changes        

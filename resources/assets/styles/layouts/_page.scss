@@ -207,3 +207,26 @@
     padding: 45px;
   }
 }
+// ================================= .patient-profile
+.patient-profile {
+  max-width: 370px;
+  .upload {
+    grid-template-columns: 150px auto;
+    grid-column-gap: 35px;
+    align-items: center;
+  }
+  .img {
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 5px;
+    }
+  }
+  .text {
+    input[type="file"] {
+      position: absolute;
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+}
