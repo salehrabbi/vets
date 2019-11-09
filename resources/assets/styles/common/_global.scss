@@ -70,6 +70,9 @@ h4 {
   &-chestnut {
     background: $chestnut;
   }
+  &-athens-gray {
+    background: $athens-gray;
+  }
 }
 // =========================== color
 .color {
@@ -135,7 +138,16 @@ h4 {
     color: #fff;
   }
 }
-
+.button-white {
+  background: #fff;
+  border-radius: 5px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 15px;
+  min-width: 125px;
+}
 .form-social {
   border-radius: 50px;
   span {

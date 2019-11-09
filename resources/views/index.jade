@@ -16,7 +16,7 @@ block main
       #collapseOne.collapse.show(aria-labelledby='headingOne' data-parent='#accordionExample')
         .card-body
           .d-grid.pages-list(style="grid-template-columns: repeat(5, 1fr); grid-gap: 15px;")
-            each val, index in ['patient-sign-up', 'patient-onboarding-1', 'patient-onboarding-2', 'patient-mathing-counselors','patient-chosse-counselor','patient-chosse-timeslot','patient-consultation','patient-profile']
+            each val, index in ['patient-sign-up', 'patient-onboarding-1', 'patient-onboarding-2', 'patient-mathing-counselors','patient-chosse-counselor','patient-chosse-timeslot','patient-consultation','patient-profile','patient-biling']
               .item(style="height: 155px;overflow: hidden;border: 1px solid #1c2945;")
                 a(href= val +".html" target="_blank")
                   img(src="screenshot/"+ val +".jpg" alt="")

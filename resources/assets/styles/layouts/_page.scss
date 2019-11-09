@@ -145,17 +145,6 @@
   max-width: 570px;
   padding-top: em(80px);
   form {
-    .input-relative {
-      position: relative;
-      i {
-        position: absolute;
-        right: 0;
-        top: 0;
-        color: rgba(64, 64, 64, 0.5);
-        right: 20px;
-        top: 12px;
-      }
-    }
     .d-grid {
       display: grid;
       grid-template-columns: 1fr em(90px);
@@ -164,16 +153,27 @@
     }
   }
 }
+.input-relative {
+  position: relative;
+  i {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: rgba(64, 64, 64, 0.5);
+    right: 20px;
+    top: 12px;
+  }
+}
 .book-time-controll {
   border-bottom: 1px solid #d5d5d5;
   .arrow {
     background: #f8f8f8;
     border-radius: 5px;
-    width: 40px;
-    height: 40px;
+    width: calc-em(40, 30);
+    height: calc-em(40, 30);
     text-align: center;
-    line-height: 40px;
-    font-size: 30px;
+    line-height: (40/30);
+    font-size: em(30px);
     color: #797979;
     cursor: pointer;
     transition: 0.3s;
@@ -228,5 +228,49 @@
       opacity: 0;
       z-index: -1;
     }
+  }
+}
+
+// ================================= patient-billing
+.patient-billing {
+  max-width: 570px;
+  .plan {
+    padding: 30px;
+    border-radius: 5px;
+    .plan-text {
+      border-right: 1px solid #c6c9d1;
+    }
+    .price {
+      p {
+        font-size: em(55px);
+        line-height: 1.25;
+        text-align: center;
+        span {
+          font-size: 16px;
+          display: block;
+        }
+      }
+    }
+  }
+  .credit-card {
+    .d-grid {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 23px;
+    }
+    .submit {
+      grid-column: 3/-1;
+    }
+  }
+}
+.history {
+  margin-top: 50px;
+  table {
+    margin-top: 30px;
+    margin-bottom: 0;
+  }
+  .table td {
+    padding: 9px 20px;
+    border: none;
+    color: $tundora;
   }
 }
