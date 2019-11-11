@@ -55,8 +55,9 @@ block main
                   .col-md-6.align-self-center
                     .row.m-0
                       each val, index in ['Yes','No']
+                        - var className = (index == 1) ? 'float-right' : ''
                         .col-md-6.p-0
-                          label.radio.d-flex.align-items-center(for=""+val)
+                          label.radio.d-flex.align-items-center(for=""+val class=className)
                             input(type="radio" id=""+val name="gender" value="male")
                             .icon
                               .squar
