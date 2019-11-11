@@ -1,8 +1,14 @@
 * {
   outline: 0 !important;
 }
+html {
+  height: 100%;
+}
 body {
   font-family: $f;
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .box-card {
   box-shadow: 0px 5px 15px rgba(28, 41, 69, 0.25);
@@ -269,9 +275,9 @@ h4 {
   top: calc-em(-8, 18);
 }
 // ========================== table
-.table-striped tbody tr:nth-of-type(2n+1) {
-	background: none;
+.table-striped tbody tr:nth-of-type(2n + 1) {
+  background: none;
 }
 .table-striped tbody tr:nth-of-type(2n) {
-	background: #F8F8F8;
+  background: #f8f8f8;
 }

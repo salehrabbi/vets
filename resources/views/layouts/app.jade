@@ -22,9 +22,10 @@ html(lang='en')
   block vars
   body(class=bodyClass)
     include ../partials/functions.jade
-    block header
-      include ../partials/header.jade
-    block main
+    .header-content-wraper
+      block header
+        include ../partials/header.jade
+      block main
     block footer
       include ../partials/footer.jade
     block foot

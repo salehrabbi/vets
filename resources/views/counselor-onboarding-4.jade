@@ -19,35 +19,55 @@ block main
             .mb-0  
               h3.color-cloud-burst.position-relative.d-flex Scheduling
                 .step 4/5
-              .mt-3
+              .pt-2
+                .row.m-0
+                  .col-md-12.p-0
+                    label.mb-2
+                      span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Days available:
+                  each val, index in ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+                    .col-md-4.p-0
+                      label.radio.d-flex.align-items-center(for=""+val)
+                        input(type="radio" id=""+val name="gender" value="male")
+                        .icon
+                          .squar
+                        span.font-medium.color-tundora= val
                 .row
-                  label.radio.d-flex.align-items-center(for="Patient")
-                    input(type="radio" id="Patient" name="gender" value="male")
-                    .icon
-                      .squar
-                    span Patient
-                .row
+                  .col-md-12
+                    h4.ff-work.color-cloud-burst.mb-0.mt-4 Working hours 
+                    p.font-medium.font-weight-bold.ff-work.color-cloud-burst.pt-3.mb-0 We will book patients into free slots automatically
+                  .col-md-6.mt-3
+                    label.w-100
+                      <select class="selectpicker w-100" title="Start time">
+                        <option>9 AM</option>
+                        <option>10 AM</option>
+                        <option>11 Am</option>
+                      </select>        
+                  .col-md-6.mt-3
+                    label.w-100
+                      <select class="selectpicker w-100" title="End time">
+                        <option>9 AM</option>
+                        <option>10 AM</option>
+                        <option>11 Am</option>
+                      </select>          
+                .row.mb-2
                   .col-md-12.mt-2
-                    label.w-100(for="select")
-                      <select id="select" class="selectpicker w-100" title="Select Combo">
-                        <option>Combo Box</option>
-                        <option>Combo Box 2</option>
-                        <option>Combo Box 3</option>
-                      </select>
-              .history.mt-3 
-                table.table.table-striped.mt-0
-                  - for(var x=0; x<5; x++)
-                    tr
-                      td 
-                        span.pr-3 Problem
-                        <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M6.74998 0L8.43759 1.65117L7.15125 2.90964L5.46364 1.25847L6.74998 0Z" fill="#9F9F9F"/>
-                          <path d="M0 6.59733V8.24833H1.6875L6.35569 3.68772L4.66819 2.03672L0 6.59733ZM0 9.89933H9V11H0V9.89933Z" fill="#9F9F9F"/>
-                        </svg>
-                      td.text-right
-                        <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M1.5 2.5C1.2235 2.5 1 2.5 1 2.5V9C1 9.552 1.448 10 2 10H7C7.552 10 8 9.552 8 9V2.5C8 2.5 7.7765 2.5 7.5 2.5H1.5ZM3.5 8.5H2.5V4H3.5V8.5ZM6.5 8.5H5.5V4H6.5V8.5ZM6.809 1L6 0H3L2.191 1H0V2H9V1H6.809Z" fill="#9F9F9F"/>
-                        </svg>
+                    p.font-medium.font-weight-bold.ff-work.color-cloud-burst.mb-2 Do you stop for lunch?
+                  .col-md-6.align-self-center
+                    .row.m-0
+                      each val, index in ['Yes','No']
+                        .col-md-6.p-0
+                          label.radio.d-flex.align-items-center(for=""+val)
+                            input(type="radio" id=""+val name="gender" value="male")
+                            .icon
+                              .squar
+                            span.font-medium.color-tundora= val
+                  .col-md-6
+                    label.w-100
+                      <select class="selectpicker w-100" title="Time for lunch">
+                        <option>9 AM</option>
+                        <option>10 AM</option>
+                        <option>11 Am</option>
+                      </select>  
             .d-grid.text-center.pt-3
               button.ff-work.color-boulder.mb-2.input-submit.bg-alabaster.text-center.font-weight-bold.text-uppercase.font-medium(type="submit") 
                 <i class="fal fa-angle-left mr-2"></i>
