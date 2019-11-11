@@ -1,0 +1,60 @@
+extends layouts/app.jade
+
+block title
+  title Counselor Onboarding 4
+
+block header
+  include partials/header-login.jade
+
+block main
+  .onboarding.onboarding-1.space
+    .container
+      .row
+        .col-md-6.color-tundora.pt-5
+          h1.color-cloud-burst.mb-4 Help us match you with the right patient.
+          p Please fill out this short questionnaire to provide some general and anonymous background about you and the issues you’d like to deal with in online therapy. 
+          p This information will help us match you with the most suitable  clinician for you. Your answers will also give this clinician a good  starting point in getting to know you.
+        .col-md-6
+          form.box-card.ml-auto.question(action="#" style="max-width: 450px;")
+            .mb-0  
+              h3.color-cloud-burst.position-relative.d-flex Scheduling
+                .step 4/5
+              .mt-3
+                .row
+                  label.radio.d-flex.align-items-center(for="Patient")
+                    input(type="radio" id="Patient" name="gender" value="male")
+                    .icon
+                      .squar
+                    span Patient
+                .row
+                  .col-md-12.mt-2
+                    label.w-100(for="select")
+                      <select id="select" class="selectpicker w-100" title="Select Combo">
+                        <option>Combo Box</option>
+                        <option>Combo Box 2</option>
+                        <option>Combo Box 3</option>
+                      </select>
+              .history.mt-3 
+                table.table.table-striped.mt-0
+                  - for(var x=0; x<5; x++)
+                    tr
+                      td 
+                        span.pr-3 Problem
+                        <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6.74998 0L8.43759 1.65117L7.15125 2.90964L5.46364 1.25847L6.74998 0Z" fill="#9F9F9F"/>
+                          <path d="M0 6.59733V8.24833H1.6875L6.35569 3.68772L4.66819 2.03672L0 6.59733ZM0 9.89933H9V11H0V9.89933Z" fill="#9F9F9F"/>
+                        </svg>
+                      td.text-right
+                        <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M1.5 2.5C1.2235 2.5 1 2.5 1 2.5V9C1 9.552 1.448 10 2 10H7C7.552 10 8 9.552 8 9V2.5C8 2.5 7.7765 2.5 7.5 2.5H1.5ZM3.5 8.5H2.5V4H3.5V8.5ZM6.5 8.5H5.5V4H6.5V8.5ZM6.809 1L6 0H3L2.191 1H0V2H9V1H6.809Z" fill="#9F9F9F"/>
+                        </svg>
+            .d-grid.text-center.pt-3
+              button.ff-work.color-boulder.mb-2.input-submit.bg-alabaster.text-center.font-weight-bold.text-uppercase.font-medium(type="submit") 
+                <i class="fal fa-angle-left mr-2"></i>
+                | Back
+              button.ff-work.mb-2.input-submit.bg-tamarillo.font-weight-bold.text-uppercase.color-white.font-medium(type="submit") 
+                | Next question
+                <i class="fal fa-angle-right ml-2"></i>
+            p.font-medium.mb-0.color-comet.mt-2.d-flex 
+              span.color-geraldine *
+              | We need to get some from you before you are allowed to access the full platform

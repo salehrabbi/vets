@@ -162,6 +162,7 @@
     color: rgba(64, 64, 64, 0.5);
     right: 20px;
     top: 12px;
+    top: 14px;
   }
 }
 .book-time-controll {
@@ -272,5 +273,219 @@
     padding: 9px 20px;
     border: none;
     color: $tundora;
+  }
+}
+
+// ======================================== .caunselor-after-match
+.caunselor-after-match {
+  overflow: hidden;
+  > .d-grid {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: calc(100vh - 174px);
+  }
+  .chat-list {
+    position: relative;
+    background: #121f3b;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 100px;
+  }
+  .chat-height {
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .avator {
+    padding: 20px 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    img {
+      border-radius: 5px;
+      width: 60px;
+    }
+    &.active,
+    &:hover {
+      background: #08132f;
+    }
+  }
+  .book-appointment {
+    border-top: 1px solid #08132f;
+    background: #121f3b;
+    padding: 30px;
+  }
+  .chat-area {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 110px;
+    .chat-date {
+      color: #c6c9d1;
+      margin: 30px 0;
+      span {
+        padding: 0 40px;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        left: 0;
+        top: 9px;
+        background: #c6c9d1;
+        z-index: -1;
+      }
+    }
+    .chat-area-height {
+      padding: 30px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: end;
+      grid-template-rows: 1fr;
+    }
+    .chat-content {
+      max-width: 570px;
+      display: grid;
+      grid-template-columns: auto 50px;
+      grid-column-gap: 30px;
+      padding-top: 30px;
+      &.left {
+        grid-template-columns: 50px auto;
+        .text {
+          order: 2;
+          .chat-text {
+            border-radius: 0 5px 5px 5px;
+            &:after {
+              border-width: 0 10px 10px 0;
+              border-color: transparent #f4f4f6 transparent transparent;
+              right: auto;
+              left: -9px;
+            }
+          }
+        }
+      }
+      .chat-text {
+        background: #f4f4f6;
+        border-radius: 5px 0 5px 5px;
+        padding: 15px 20px;
+        font-size: em(14px);
+        color: rgba(64, 64, 64, 0.7);
+        position: relative;
+        &:after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: -9px;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 10px 10px 0 0;
+          border-color: #f4f4f6 transparent transparent transparent;
+        }
+      }
+      .img {
+        img {
+          border-radius: 5px;
+        }
+      }
+    }
+    .send-message {
+      .img {
+        img {
+          border-radius: 5px;
+        }
+      }
+      display: grid;
+      grid-template-columns: 50px auto;
+      grid-column-gap: 30px;
+      background: #fff;
+      padding: 30px;
+      align-items: center;
+      .message {
+        border: 1px solid #d5d5d5;
+        border-radius: 5px 50px 50px 5px;
+        overflow: hidden;
+        button {
+          width: 150px;
+        }
+      }
+    }
+  }
+  // ===================n2
+  &.n-2 {
+    .chat-area {
+      .chat-content {
+        max-width: 100%;
+      }
+      .send-message {
+        display: block;
+        .message {
+          border-radius: 5px;
+        }
+        button {
+          background: none;
+          border: none;
+          width: auto;
+        }
+      }
+    }
+    .call-screen {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      .call-action {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        bottom: 30px;
+        a {
+          width: 44px;
+          height: 44px;
+          background: #fff;
+          border-radius: 50%;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          margin: 0 (25px/2);
+          font-size: 20px;
+          text-decoration: none;
+          transition: 0.3s;
+          &:hover {
+            background: #a80f14;
+            color: #fff;
+            path {
+              fill: #fff;
+            }
+          }
+        }
+        .phone {
+          transform: rotate(-135deg);
+          background: #a80f14;
+          color: #fff;
+        }
+      }
+    }
+  }
+  // ====================n3
+  &.n-3 {
+    .chat-area {
+      border-right: 1px solid #c6c9d1;
+    }
+    .choose-timeslot-content {
+      padding-top: 0;
+      align-self: center;
+      padding: 30px 0;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+  // =========================n4
+  &.n-4 {
+    .video-connecting {
+      align-self: center;
+    }
   }
 }

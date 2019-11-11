@@ -1,0 +1,52 @@
+extends layouts/app.jade
+
+block title
+  title Patient Counselor After Match 1
+
+block main
+  .caunselor-after-match.n-1
+    .d-grid
+      .chat-list.color-white
+        .chat-height
+          - for(var x=0; x<3; x++)
+            - var className = (x == 2) ? 'active' : ''
+            .avator.d-flex.align-items-center(class=className)
+              .img.mr-3
+                img(src="dist/images/counsilor.png" alt="")
+              .text
+                .title.color-white.font-weight-bold.ff-work Dr. Peter Kirkpatrick
+                p.m-0.font-medium
+                  <i class="fas fa-map-marker-alt color-crimson mr-2"></i>
+                  | London
+        .book-appointment
+          a.btn.button.bg-chestnut.color-white.text-uppercase.ff-work.font-weight-bold.font-small.button-hover-red(href="#") book appointment        
+      .chat-area
+        .chat-area-height
+          .w-100.chat-date.font-small.font-weight-bold.ff-work.text-center.position-relative 
+            span.bg-white.d-inline-block Monday, 25 October 2019 
+          - for(var x=0; x<10; x++)
+            .w-100
+              .chat-content.right.ml-auto
+                .text
+                  .time.ff-work.font-small.font-weight-bold.color-cloud-burst.pb-1.text-right Tony Parker 12:50
+                  .chat-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                .img
+                  img(src="dist/images/counsilor.png" alt="")  
+            .w-100
+              .chat-content.left
+                .text
+                  .time.ff-work.font-small.font-weight-bold.color-cloud-burst.pb-1 Tony Parker 12:50
+                  .chat-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                .img
+                  img(src="dist/images/counsilor.png" alt="")
+        .send-message
+          .img
+            img(src="dist/images/counsilor.png" alt="")
+          .message.d-flex
+            input.border-0.input-text.m-0(type="text" placeholder="Enter your message")
+            button.text-uppercase.text-nowrap.input-submit.bg-tamarillo.color-white.font-weight-bold.ff-work.font-medium(type="submit") 
+              | Send
+              <svg class="ml-2" width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.815049 0.18378C0.654417 0.11492 0.468304 0.147363 0.340403 0.266439C0.21248 0.385578 0.166946 0.568956 0.224225 0.734042L2.10779 6.16516L14.7717 6.16525L0.815049 0.18378Z" fill="white"/>
+                <path d="M2.10776 7.04793L0.224153 12.4791C0.168612 12.6393 0.209795 12.8166 0.328995 12.9358C0.332703 12.9395 0.336452 12.9431 0.340347 12.9467C0.468247 13.0658 0.65436 13.0982 0.815013 13.0294L14.7717 7.04794L2.10776 7.04793Z" fill="white"/>
+              </svg>

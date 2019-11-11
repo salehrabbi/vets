@@ -1,0 +1,52 @@
+extends layouts/app.jade
+
+block title
+  title Patient Counselor After Match 3
+
+block main
+  .caunselor-after-match.n-2.n-3
+    .d-grid
+      .chat-area
+        .chat-area-height 
+          - for(var x=0; x<3; x++) 
+            .chat-content.left
+              .text
+                .time.ff-work.font-small.font-weight-bold.color-cloud-burst.pb-1 Tony Parker 12:50
+                .chat-text Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do  eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              .img
+                img(src="dist/images/counsilor.png" alt="")
+        .send-message
+          .message.d-flex
+            input.border-0.input-text.m-0.pr-0(type="text" placeholder="Enter your message")
+            button.color-tamarillo(type="submit") 
+              <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11.064 6.55036C10.8125 6.44255 10.5211 6.49334 10.3208 6.67978C10.1206 6.86631 10.0493 7.15341 10.139 7.41188L13.088 15.9151L32.9153 15.9153L11.064 6.55036Z" fill="#A80F14"/>
+                <path d="M13.0879 17.2973L10.1388 25.8006C10.0519 26.0514 10.1164 26.3289 10.303 26.5156C10.3088 26.5214 10.3147 26.527 10.3208 26.5327C10.521 26.7192 10.8124 26.77 11.0639 26.6622L32.9153 17.2973L13.0879 17.2973Z" fill="#A80F14"/>
+              </svg>
+      .choose-timeslot-content.mx-auto
+        form(action="#")
+          label.color-cloud-burst.font-weight-bold.ff-work(for="calender") Search for a specific date:
+          .d-grid
+            .input-relative
+              <input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="Day/Month/Year">
+              <i class="fas fa-calendar-alt"></i>
+            button.ff-work.input-submit.bg-tamarillo.font-weight-bold.text-uppercase.color-white.font-medium(type="submit") 
+              | Go
+          .book-time-controll.pb-2.pt-4.mt-2
+            .row.align-items-center
+              .col-md-6
+                h4.color-cloud-burst.m-0 Monday 29th October
+              .col-md-6.text-right
+                .arrow.d-inline-block.mr-2
+                  <i class="fal fa-angle-left"></i>  
+                .arrow.d-inline-block
+                  <i class="fal fa-angle-right"></i> 
+          .row.time-slot-radio
+            - for(var x=0; x<8; x++)
+              - var className = (x == 2) ? 'checked' : ''
+              .col-md-6
+                label.radio.d-flex.align-items-center(for="Patient" + x class=className)
+                  input(type="radio" id="Patient" + x name="gender" value="male")
+                  .icon
+                    .squar
+                  span 09:00 am

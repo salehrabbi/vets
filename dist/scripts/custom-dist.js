@@ -1,1 +1,1 @@
-$('[data-toggle="datepicker"]').datepicker({format:"dd/mm/yyyy"}),$("input:radio").click(function(){$("input:radio").parent().removeClass("checked"),$(this).parent(this).addClass("checked")});
+function auto_grow(t){t.style.height="5px",t.style.height=t.scrollHeight+"px"}$('[data-toggle="datepicker"]').datepicker({format:"dd/mm/yyyy"}),$("input:radio").click(function(){$("input:radio").parent().removeClass("checked"),$(this).parent(this).addClass("checked")});
