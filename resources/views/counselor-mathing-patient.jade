@@ -1,0 +1,23 @@
+extends layouts/app.jade
+
+block title
+  title Mathing Counselors
+
+block main
+  .space
+    .container
+      .form-step.mx-auto.counselor-mathing-patient-step
+        .step-border
+        .d-grid.text-center.font-medium.font-weight-bold.ff-work
+          each val, index in ['Get Approved', 'Customer Invites', 'Consultation']
+            - var className = (index == 0) ? 'active' : ''
+            .step-part(class=className)
+              .mx-auto.step-number.color-white.bg-manatee.mb-3= index+1 
+              .title.color-manatee= val
+      .py-5.text-center.d-flex.mathin-counselor-content.align-items-center.justify-content-center.flex-column
+        img(src="dist/images/logo-2.png" alt="")
+        h1.color-cloud-burst.mt-4 
+          | Awaiting
+          br 
+          | account approval
+        p.mx-auto.font-big.color-tundora(style="max-width: 570px;") We are going through everything to make sure you are qualified to work on the paltform.      
