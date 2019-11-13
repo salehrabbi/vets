@@ -39,10 +39,9 @@ block main
                     <option>10 AM</option>
                     <option>11 Am</option>
                   </select>          
-            .row.mb-2
-              .col-md-12.mt-2
-                p.font-medium.font-weight-bold.ff-work.color-cloud-burst.mb-2 Do you stop for lunch?
+            .row.mb-2.mt-3  
               .col-md-6.align-self-center
+                p.font-medium.font-weight-bold.ff-work.color-cloud-burst.mb-3 Do you stop for lunch?
                 fieldset#group2
                   .row.m-0
                     each val, index in ['Yes, I stop for lunch','No, I don t stop for lunch']
@@ -52,9 +51,12 @@ block main
                           input(type="radio" id=""+val name="group2" value="male")
                           span.font-medium.color-tundora= val
               .col-md-6
+                p.font-medium.font-weight-bold.ff-work.color-cloud-burst.mb-3 What time do you take lunch?
                 label.w-100
                   <select class="selectpicker w-100" title="Time for lunch">
                     <option>9 AM</option>
                     <option>10 AM</option>
                     <option>11 Am</option>
                   </select>  
+            .pt-3
+              button.input-submit.bg-tamarillo.color-white.ff-work.text-uppercase(type="submit" style="min-width: 200px;font-weight: 600;") save changes       

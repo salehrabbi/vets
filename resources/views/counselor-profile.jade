@@ -1,0 +1,98 @@
+extends layouts/app.jade
+
+block title
+  title Counselor Profile
+
+block main
+  .space
+    .container
+      .patient-profile.mx-auto
+        .row
+          form.col-12(action="#")
+            .upload.d-grid  
+              .img
+                img(src="dist/images/profile.png" alt="")
+              .text
+                p.font-weight-bold.ff-work.color-cloud-burst Upload a profile file:
+                label.w-100(for="file")
+                  span.button-hover.w-100.input-file.btn.bg-alabaster.ff-work.font-small.font-weight-bold.color-boulder
+                    <i class="fas fa-file-image mr-2"></i>
+                    | Select file
+                  input(type="file" id="file" name="profile")
+            h4.color-cloud-burst.ff-work.mt-4.pt-3.mb-3 Profile details 
+            label.w-100(for="name") 
+              span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Name:
+              input.input-text.w-100(type="text" id="name" placeholder="Your full name")
+            label.w-100(for="Town") 
+              span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Town/city:
+              input.input-text.w-100(type="text" id="Town" placeholder="Your current location") 
+            label.w-100(for="Hobbies") 
+              span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Hobbies:
+              input.input-text.w-100(type="text" id="Hobbies" placeholder="What do you like to do?")
+            label.w-100(for="textarea") 
+              span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Bio, tell us about yourself:
+              <textarea class="input-textarea" id="textarea" placeholder="Tell about yourself, for better consultation"></textarea> 
+            .question.mt-4.pt-2(action="#")
+              .mb-0  
+                h4.color-cloud-burst.position-relative.d-flex Qualification
+                .mt-3.card-border-bottom 
+                  span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Qualification
+                  input.input-text(type="text" placeholder="Enter your qualification")
+                  .row
+                    .col-md-6
+                      label(for="calender")
+                        span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Date obtained:
+                        .input-relative
+                          <input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="Day/Month/Year">
+                          <i class="fas fa-calendar-alt"></i>
+                    .col-md-6
+                      label.w-100(for="select")
+                        span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Is it still active?
+                        <select id="select" class="selectpicker w-100" title="Select Combo">
+                          <option>Combo Box</option>
+                          <option>Combo Box 2</option>
+                          <option>Combo Box 3</option>
+                        </select>
+                    .col-md-12
+                      a.font-medium.ff-work.text-uppercase.color-geraldine.add-more(href="#") + Add one more    
+                .history.mt-3 
+                  table.table.table-striped.mt-0
+                    - for(var x=0; x<3; x++)
+                      tr
+                        td 
+                          span.pr-3 Qualification name
+                          <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.74998 0L8.43759 1.65117L7.15125 2.90964L5.46364 1.25847L6.74998 0Z" fill="#9F9F9F"/>
+                            <path d="M0 6.59733V8.24833H1.6875L6.35569 3.68772L4.66819 2.03672L0 6.59733ZM0 9.89933H9V11H0V9.89933Z" fill="#9F9F9F"/>
+                          </svg>
+                        td.text-right
+                          <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.5 2.5C1.2235 2.5 1 2.5 1 2.5V9C1 9.552 1.448 10 2 10H7C7.552 10 8 9.552 8 9V2.5C8 2.5 7.7765 2.5 7.5 2.5H1.5ZM3.5 8.5H2.5V4H3.5V8.5ZM6.5 8.5H5.5V4H6.5V8.5ZM6.809 1L6 0H3L2.191 1H0V2H9V1H6.809Z" fill="#9F9F9F"/>
+                          </svg>
+            .question.mt-4.pt-2(action="#")
+              .mb-0  
+                h4.color-cloud-burst.position-relative.d-flex What can you help with?
+                .mt-3.card-border-bottom 
+                  .row
+                    .col-md-12.mt-2
+                      label.w-100(for="select")
+                        <select id="select" class="selectpicker w-100" title="Select Combo">
+                          <option>Combo Box</option>
+                          <option>Combo Box 2</option>
+                          <option>Combo Box 3</option>
+                        </select>
+                .history.mt-3 
+                  table.table.table-striped.mt-0
+                    - for(var x=0; x<5; x++)
+                      tr
+                        td 
+                          span.pr-3 Problem
+                          <svg width="9" height="11" viewBox="0 0 9 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.74998 0L8.43759 1.65117L7.15125 2.90964L5.46364 1.25847L6.74998 0Z" fill="#9F9F9F"/>
+                            <path d="M0 6.59733V8.24833H1.6875L6.35569 3.68772L4.66819 2.03672L0 6.59733ZM0 9.89933H9V11H0V9.89933Z" fill="#9F9F9F"/>
+                          </svg>
+                        td.text-right
+                          <svg width="9" height="10" viewBox="0 0 9 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.5 2.5C1.2235 2.5 1 2.5 1 2.5V9C1 9.552 1.448 10 2 10H7C7.552 10 8 9.552 8 9V2.5C8 2.5 7.7765 2.5 7.5 2.5H1.5ZM3.5 8.5H2.5V4H3.5V8.5ZM6.5 8.5H5.5V4H6.5V8.5ZM6.809 1L6 0H3L2.191 1H0V2H9V1H6.809Z" fill="#9F9F9F"/>
+                          </svg>     
+            button.btn.input-submit.bg-tamarillo.color-white.font-weight-bold.ff-work.text-uppercase.font-medium.mt-4(type="submit" style="min-width: 200px") save changes        
