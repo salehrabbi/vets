@@ -1,7 +1,7 @@
 extends layouts/app.jade
 
 block title
-  title Counselor Schedule
+  title Counselor Schedule 2
 
 block main
   .space
@@ -9,26 +9,24 @@ block main
       .choose-timeslot-content.mx-auto.pt-0
         form(action="#")
           h3.color-cloud-burst.mb-3 Fill in previous booking
-          label.color-cloud-burst.font-weight-bold.ff-work(for="calender") 
+          label.color-cloud-burst.font-weight-bold.ff-work.mb-0(for="calender") 
             .pb-2 Date obtained:
-            .d-grid
-              .input-relative
-                <input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="Day/Month/Year">
-                <i class="fas fa-calendar-alt"></i>
-              button.ff-work.input-submit.bg-tamarillo.font-weight-bold.text-uppercase.color-white.font-medium(type="submit") 
-                | Go
-            .book-time-controll.pt-4.mt-2
-              .row.align-items-center
-                .col-md-12
-                  label.color-cloud-burst.font-weight-bold.ff-work.mb-2 Click slots to mark as booked
-            .row.time-slot-radio.mb-3
-              - for(var x=0; x<8; x++)
-                - var className = (x == 2) ? 'checked' : ''
-                .col-md-6
-                  label.radio.d-flex.align-items-center(for="Patient" + x class=className)
-                    input(type="radio" id="Patient" + x name="gender" value="male")
-                    .icon
-                      .squar
-                    span.font-weight-normal 09:00 am   
-            .pt-3
-              button.input-submit.bg-tamarillo.color-white.ff-work(type="submit" style="min-width: 200px;font-weight: 600;") Update schedule        
+          .d-grid
+            .input-relative
+              <input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="Day/Month/Year">
+              <i class="fas fa-calendar-alt"></i>
+            button.ff-work.input-submit.bg-tamarillo.font-weight-bold.text-uppercase.color-white.font-medium(type="submit") 
+              | Go
+          .book-time-controll.pt-4.mt-2
+            .row.align-items-center
+              .col-md-12
+                label.color-cloud-burst.font-weight-bold.ff-work.mb-2 Click slots to mark as booked
+          .row.time-slot-radio.mb-3
+            - for(var x=0; x<8; x++)
+              - var className = (x == 7) ? 'checked' : ''
+              .col-md-6
+                label.radio.d-flex.align-items-center(for="Patient" + x class=className)
+                  input(type="radio" id="Patient" + x name="gender" value="male" checked=className)
+                  span.font-weight-normal 09:00 am   
+          .pt-3
+            button.input-submit.bg-tamarillo.color-white.ff-work(type="submit" style="min-width: 200px;font-weight: 600;") Update schedule        

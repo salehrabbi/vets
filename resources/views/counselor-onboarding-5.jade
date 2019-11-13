@@ -32,12 +32,10 @@ block main
                     label.color-cloud-burst.font-weight-bold.ff-work.mb-2 Click slots to mark as booked
               .row.time-slot-radio.mb-3
                 - for(var x=0; x<8; x++)
-                  - var className = (x == 2) ? 'checked' : ''
+                  - var className = (x == 7) ? 'checked' : ''
                   .col-md-6
                     label.radio.d-flex.align-items-center(for="Patient" + x class=className)
-                      input(type="radio" id="Patient" + x name="gender" value="male")
-                      .icon
-                        .squar
+                      input(type="radio" id="Patient" + x name="gender" value="male" checked=className)
                       span 09:00 am   
             .d-grid.text-center.pt-3
               button.ff-work.color-boulder.mb-2.input-submit.bg-alabaster.text-center.font-weight-bold.text-uppercase.font-medium(type="submit") 

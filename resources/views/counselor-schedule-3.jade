@@ -1,0 +1,60 @@
+extends layouts/app.jade
+
+block title
+  title Counselor Schedule 3
+
+block main
+  .space
+    .container
+      form.mx-auto.question(action="#" style="max-width: 570px;")
+        .mb-0  
+          h3.color-cloud-burst.position-relative.d-flex Scheduling
+          .pt-2
+            .row.m-0
+              .col-md-12.p-0
+                label.mb-2
+                  span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Days available:
+            fieldset#group1 
+              .row.m-0  
+                each val, index in ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+                  .col-md-3.p-0
+                    label.radio.d-flex.align-items-center(for=""+val)
+                      input(type="radio" id=""+val name="group1" value="male")
+                      span.font-medium.color-tundora= val
+            .row
+              .col-md-12
+                h4.ff-work.color-cloud-burst.mb-0.mt-4 Working hours 
+                p.font-medium.font-weight-bold.ff-work.color-cloud-burst.pt-3.mb-0 We will book patients into free slots automatically
+              .col-md-6.mt-3
+                label.w-100
+                  <select class="selectpicker w-100" title="Start time">
+                    <option>9 AM</option>
+                    <option>10 AM</option>
+                    <option>11 Am</option>
+                  </select>        
+              .col-md-6.mt-3
+                label.w-100
+                  <select class="selectpicker w-100" title="End time">
+                    <option>9 AM</option>
+                    <option>10 AM</option>
+                    <option>11 Am</option>
+                  </select>          
+            .row.mb-2
+              .col-md-12.mt-2
+                p.font-medium.font-weight-bold.ff-work.color-cloud-burst.mb-2 Do you stop for lunch?
+              .col-md-6.align-self-center
+                fieldset#group2
+                  .row.m-0
+                    each val, index in ['Yes, I stop for lunch','No, I don t stop for lunch']
+                      - var className = (index == 1) ? '' : ''
+                      .col-md-12.p-0
+                        label.radio.d-flex.align-items-center(for=""+val class=className)
+                          input(type="radio" id=""+val name="group2" value="male")
+                          span.font-medium.color-tundora= val
+              .col-md-6
+                label.w-100
+                  <select class="selectpicker w-100" title="Time for lunch">
+                    <option>9 AM</option>
+                    <option>10 AM</option>
+                    <option>11 Am</option>
+                  </select>  

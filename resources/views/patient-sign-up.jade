@@ -20,15 +20,11 @@ block main
             form.row.color-tundora(action="#")
               .col-md-6
                 label.radio.d-flex.align-items-center(for="Patient")
-                  input(type="radio" id="Patient" name="gender" value="male")
-                  .icon
-                    .squar
+                  input(type="radio" id="Patient" name="gender" value="male" checked)
                   span Patient
               .col-md-6
                 label.radio.d-flex.align-items-center(for="Clinician")
                   input(type="radio" id="Clinician" name="gender" value="female")
-                  .icon
-                    .squar
                   span Clinician    
               .col-12.mt-4
                 input.input-text(type="text" placeholder="Your e-mail address")

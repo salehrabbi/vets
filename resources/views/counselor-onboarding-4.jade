@@ -24,13 +24,13 @@ block main
                   .col-md-12.p-0
                     label.mb-2
                       span.ff-work.color-cloud-burst.font-weight-bold.pb-1.d-inline-block Days available:
-                  each val, index in ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
-                    .col-md-4.p-0
-                      label.radio.d-flex.align-items-center(for=""+val)
-                        input(type="radio" id=""+val name="gender" value="male")
-                        .icon
-                          .squar
-                        span.font-medium.color-tundora= val
+                fieldset#group1
+                  .row.m-0
+                    each val, index in ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+                      .col-md-4.p-0
+                        label.radio.d-flex.align-items-center(for=""+val)
+                          input(type="radio" id=""+val name="group1" value="male")
+                          span.font-medium.color-tundora= val
                 .row
                   .col-md-12
                     h4.ff-work.color-cloud-burst.mb-0.mt-4 Working hours 
@@ -53,15 +53,14 @@ block main
                   .col-md-12.mt-2
                     p.font-medium.font-weight-bold.ff-work.color-cloud-burst.mb-2 Do you stop for lunch?
                   .col-md-6.align-self-center
-                    .row.m-0
-                      each val, index in ['Yes','No']
-                        - var className = (index == 1) ? 'float-right' : ''
-                        .col-md-6.p-0
-                          label.radio.d-flex.align-items-center(for=""+val class=className)
-                            input(type="radio" id=""+val name="gender" value="male")
-                            .icon
-                              .squar
-                            span.font-medium.color-tundora= val
+                    fieldset#group2
+                      .row.m-0
+                        each val, index in ['Yes','No']
+                          - var className = (index == 1) ? 'float-right' : ''
+                          .col-md-6.p-0
+                            label.radio.d-flex.align-items-center(for=""+val class=className)
+                              input(type="radio" id=""+val name="group2" value="male")
+                              span.font-medium.color-tundora= val
                   .col-md-6
                     label.w-100
                       <select class="selectpicker w-100" title="Time for lunch">

@@ -8,7 +8,7 @@
     <meta name="description" content="description here">
     <meta name="keywords" content="keywords,here">
     <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
-    <title>Counselor Schedule</title>
+    <title>Counselor Schedule 2</title>
     <!-- Bootstrap--><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Work+Sans:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
     <link href="dist/styles/style.css" rel="stylesheet">
@@ -31,92 +31,68 @@
           <div class="choose-timeslot-content mx-auto pt-0">
             <form action="#">
               <h3 class="color-cloud-burst mb-3">Fill in previous booking</h3>
-              <label class="color-cloud-burst font-weight-bold ff-work" for="calender"> 
+              <label class="color-cloud-burst font-weight-bold ff-work mb-0" for="calender"> 
                 <div class="pb-2">Date obtained:</div>
-                <div class="d-grid">
-                  <div class="input-relative"><input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="Day/Month/Year">
-<i class="fas fa-calendar-alt"></i>
-                  </div>
-                  <button class="ff-work input-submit bg-tamarillo font-weight-bold text-uppercase color-white font-medium" type="submit">
-                     Go</button>
-                </div>
-                <div class="book-time-controll pt-4 mt-2">
-                  <div class="row align-items-center">
-                    <div class="col-md-12">
-                      <label class="color-cloud-burst font-weight-bold ff-work mb-2">Click slots to mark as booked</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="row time-slot-radio mb-3">
-                  <div class="col-md-6">
-                    <label class="radio d-flex align-items-center" for="Patient0">
-                      <input type="radio" id="Patient0" name="gender" value="male">
-                      <div class="icon">
-                        <div class="squar"></div>
-                      </div><span class="font-weight-normal">09:00 am   </span>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="radio d-flex align-items-center" for="Patient1">
-                      <input type="radio" id="Patient1" name="gender" value="male">
-                      <div class="icon">
-                        <div class="squar"></div>
-                      </div><span class="font-weight-normal">09:00 am   </span>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="radio d-flex align-items-center checked" for="Patient2">
-                      <input type="radio" id="Patient2" name="gender" value="male">
-                      <div class="icon">
-                        <div class="squar"></div>
-                      </div><span class="font-weight-normal">09:00 am   </span>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="radio d-flex align-items-center" for="Patient3">
-                      <input type="radio" id="Patient3" name="gender" value="male">
-                      <div class="icon">
-                        <div class="squar"></div>
-                      </div><span class="font-weight-normal">09:00 am   </span>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="radio d-flex align-items-center" for="Patient4">
-                      <input type="radio" id="Patient4" name="gender" value="male">
-                      <div class="icon">
-                        <div class="squar"></div>
-                      </div><span class="font-weight-normal">09:00 am   </span>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="radio d-flex align-items-center" for="Patient5">
-                      <input type="radio" id="Patient5" name="gender" value="male">
-                      <div class="icon">
-                        <div class="squar"></div>
-                      </div><span class="font-weight-normal">09:00 am   </span>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="radio d-flex align-items-center" for="Patient6">
-                      <input type="radio" id="Patient6" name="gender" value="male">
-                      <div class="icon">
-                        <div class="squar"></div>
-                      </div><span class="font-weight-normal">09:00 am   </span>
-                    </label>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="radio d-flex align-items-center" for="Patient7">
-                      <input type="radio" id="Patient7" name="gender" value="male">
-                      <div class="icon">
-                        <div class="squar"></div>
-                      </div><span class="font-weight-normal">09:00 am   </span>
-                    </label>
-                  </div>
-                </div>
-                <div class="pt-3">
-                  <button class="input-submit bg-tamarillo color-white ff-work" type="submit" style="min-width: 200px;font-weight: 600;">Update schedule        </button>
-                </div>
               </label>
+              <div class="d-grid">
+                <div class="input-relative"><input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="Day/Month/Year">
+<i class="fas fa-calendar-alt"></i>
+                </div>
+                <button class="ff-work input-submit bg-tamarillo font-weight-bold text-uppercase color-white font-medium" type="submit">
+                   Go</button>
+              </div>
+              <div class="book-time-controll pt-4 mt-2">
+                <div class="row align-items-center">
+                  <div class="col-md-12">
+                    <label class="color-cloud-burst font-weight-bold ff-work mb-2">Click slots to mark as booked</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row time-slot-radio mb-3">
+                <div class="col-md-6">
+                  <label class="radio d-flex align-items-center" for="Patient0">
+                    <input type="radio" id="Patient0" name="gender" value="male" checked=""><span class="font-weight-normal">09:00 am   </span>
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label class="radio d-flex align-items-center" for="Patient1">
+                    <input type="radio" id="Patient1" name="gender" value="male" checked=""><span class="font-weight-normal">09:00 am   </span>
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label class="radio d-flex align-items-center" for="Patient2">
+                    <input type="radio" id="Patient2" name="gender" value="male" checked=""><span class="font-weight-normal">09:00 am   </span>
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label class="radio d-flex align-items-center" for="Patient3">
+                    <input type="radio" id="Patient3" name="gender" value="male" checked=""><span class="font-weight-normal">09:00 am   </span>
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label class="radio d-flex align-items-center" for="Patient4">
+                    <input type="radio" id="Patient4" name="gender" value="male" checked=""><span class="font-weight-normal">09:00 am   </span>
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label class="radio d-flex align-items-center" for="Patient5">
+                    <input type="radio" id="Patient5" name="gender" value="male" checked=""><span class="font-weight-normal">09:00 am   </span>
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label class="radio d-flex align-items-center" for="Patient6">
+                    <input type="radio" id="Patient6" name="gender" value="male" checked=""><span class="font-weight-normal">09:00 am   </span>
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label class="radio d-flex align-items-center checked" for="Patient7">
+                    <input type="radio" id="Patient7" name="gender" value="male" checked="checked"><span class="font-weight-normal">09:00 am   </span>
+                  </label>
+                </div>
+              </div>
+              <div class="pt-3">
+                <button class="input-submit bg-tamarillo color-white ff-work" type="submit" style="min-width: 200px;font-weight: 600;">Update schedule        </button>
+              </div>
             </form>
           </div>
         </div>
