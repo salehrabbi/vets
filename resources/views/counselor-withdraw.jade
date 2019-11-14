@@ -1,43 +1,40 @@
 extends layouts/app.jade
 
 block title
-  title Patient Billing
+  title Counselor Withdraw
 
 block main
-  .space
+  .space.counselor-withdraw
     .container
       .patient-billing.mx-auto
         .plan.bg-athens-gray
           .row.align-items-center
             .col-md-8.plan-text
-              h3.color-cloud-burst.ff-work.mb-3 Current plan
-              p.font-medium Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            .col-md-4.price
-              p.color-cloud-burst.ff-work.font-weight-bold.m-0 
-                | $79
-                span Per Month
-
-          .row.mt-3.align-items-center
+              .row.align-items-center
+                .col-md-6.py-3
+                  h3.color-cloud-burst.ff-work.mb-0 Current Balance:
+                .price.col-md-6
+                  p.color-cloud-burst.ff-work.font-weight-bold.m-0 
+                    | $79
+                    span Ready to withdraw
+            .col-md-4
+              button.w-100.text-uppercase.font-small.btn.text-nowrap.input-submit.bg-tamarillo.button-hover.font-weight-bold.color-white.mx-auto(style="max-width: 125px;") withdraw
+          .row.mt-3.pt-2.align-items-center
             .col-md-8
-              p.font-big.font-weight-bold.color-cloud-burst.ff-work.m-0 Your current Card ending in:
+              p.font-big.font-weight-bold.color-cloud-burst.ff-work.m-0 Bank Account ending in:
             .col-md-4.text-center
               .button-hover.button-white.btn.font-weight-bold.ff-work.font-big.color-cloud-burst 5757  
         form.credit-card.mt-4.pt-3.ff-work(action="#")
-          h4.color-cloud-burst.font-weight-bold.ff-work.mb-3 Enter new card details 
-          label.font-weight-bold.color-cloud-burst.font-medium(for="card") Card number:
+          h4.color-cloud-burst.font-weight-bold.ff-work.mb-3 Enter new bank details
+          label.font-weight-bold.color-cloud-burst.font-medium(for="account") Account number:
           .d-grid
-            -for (var x=0; x<4; x++)
-              input.input-text(type="text")
+            -for (var x=0; x<1; x++)
+              input.input-text.account-number(type="text" id="account")
           .d-grid
-            label.font-weight-bold.color-cloud-burst.font-medium.m-0(for="calender") 
-              span.mb-2.d-block Card number:
+            label.font-weight-bold.color-cloud-burst.font-medium.m-0.card-number(for="card") 
+              span.mb-2.d-block Routing number:
               .input-relative
-                <input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="04/24">
-                <i class="fas fa-calendar-alt"></i>   
-            label.font-weight-bold.color-cloud-burst.font-medium.m-0(for="calender") 
-              span.mb-2.d-block Card number:
-              .input-relative
-                input.input-text.mb-0(type="text")
+                input.input-text.mb-0(type="text" id="card")
             .align-self-end.submit
               button.w-100.text-uppercase.font-medium.btn.text-nowrap.input-submit.bg-tamarillo.button-hover.font-weight-bold.color-white save changes      
         .history
