@@ -17,3 +17,7 @@ $("input:radio").checkradios({
     iconClass: "icon"
   }
 });
+
+$("#demo").datetimepicker({
+  date: new Date()
+});
