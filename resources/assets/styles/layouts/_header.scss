@@ -3,3 +3,193 @@
   padding: 30px 0;
   margin-bottom: auto;
 }
+.main-header .navbar {
+  .nav-link {
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    padding: 0;
+    border-bottom: 1px solid transparent;
+  }
+  .nav-item {
+    padding: 0 15px;
+    &.active,
+    &:hover {
+      .nav-link {
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+}
+// ============================= .notification
+.notification {
+  position: relative;
+  // margin-left: 10px;
+  width: 45px;
+  .dropdown-menu {
+    left: auto;
+    float: none;
+    min-width: none;
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    border: none;
+    border-radius: 5px;
+  }
+  .notification-bell {
+    background: none;
+    border: none;
+    position: relative;
+    i {
+      font-size: 25px;
+      color: #fff;
+    }
+    .number {
+      background: #ed1c24;
+      font-size: 12px;
+      color: #1c2945;
+      height: 22px;
+      width: 22px;
+      font-family: $w;
+      border-radius: 50%;
+      font-weight: 700;
+      line-height: 1;
+      border: 3px solid #1c2945;
+      position: absolute;
+      top: -5px;
+      right: -3px;
+    }
+  }
+  .notification-wrpaer {
+    position: absolute;
+    min-width: 225px;
+    right: 44%;
+    top: 33px;
+    z-index: -1;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    &.show {
+      z-index: 99999;
+      opacity: 1;
+      visibility: visible;
+    }
+    .position-relative {
+      &:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 7.5px 15px 7.5px 0;
+        border-color: transparent #fff transparent transparent;
+        position: absolute;
+        right: 0;
+        top: -6px;
+      }
+    }
+  }
+  .notifiaction-content {
+    list-style: none;
+    background: #fff;
+    box-shadow: 0px 4px 10px rgba(95, 98, 104, 0.2);
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    a {
+      font-size: 14px;
+      color: #404040;
+      padding: 10px 20px;
+      display: block;
+      text-decoration: none;
+      position: relative;
+      white-space: nowrap;
+      &:hover {
+        background: #f8f8f8;
+      }
+    }
+  }
+}
+// -====================== mobile menu
+@include md {
+  #navbarSupportedContent {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    width: 250px; /*example + never use min-width with this solution */
+    height: 100vh;
+    background: $cloud-burst;
+  }
+  .hamburger {
+    float: right;
+    height: 25px;
+    padding: 0;
+    width: 45px;
+    margin-top: -2px;
+  }
+  .hamburger-box {
+    width: 25px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+  .hamburger-inner {
+    width: 16px !important;
+    transition-duration: 0.075s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+  }
+  .hamburger-inner,
+  .hamburger-inner:before,
+  .hamburger-inner:after {
+    content: "";
+    background: #fff;
+    width: 25px;
+    height: 2px;
+    border-radius: 0;
+    display: block;
+    position: absolute;
+  }
+  .hamburger-inner::after {
+    bottom: -6px;
+    transition: bottom 0.075s 0.12s ease,
+      transform 0.075s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  .hamburger-inner::before {
+    top: -6px;
+    transition: top 0.075s 0.12s ease, opacity 0.075s ease;
+  }
+  .hamburger--squeeze.is-active .hamburger-inner {
+    transform: rotate(45deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    width: 25px !important;
+  }
+  .hamburger--squeeze.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.075s ease, opacity 0.075s 0.12s ease;
+  }
+  .hamburger--squeeze.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.075s ease,
+      transform 0.075s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .navbar-toggler {
+    order: 1;
+  }
+  .navbar-brand {
+    order: 2;
+    margin: 0 auto;
+  }
+  .notification {
+    order: 3;
+  }
+  .main-header .navbar .nav-link {
+    padding: 10px 20px;
+  }
+}

@@ -1,7 +1,42 @@
 header.main-header.header-login.bg-cloud-burst.color-white
   .container-fluid
     .row
-      .col
-        a(href="#")
-          img(src="dist/images/logo.png" alt="")
-      .col.text-right
+      nav.navbar.navbar-expand-md.w-100.py-0
+        a.navbar-brand.py-0(href='#')
+          picture
+            source(media='(min-width: 768px)' srcset='dist/images/logo.png')
+            img(src='dist/images/logo-mobile.png' alt='logo' style='width:auto;')
+        button.navbar-toggler.hamburger--squeeze.hamburger(type='button' data-toggle="slide-collapse" data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+          span.hamburger-box
+            span.hamburger-inner
+        #navbarSupportedContent.collapse.navbar-collapse
+          a.navbar-brand.d-block.d-md-none.px-4.py-3.text-center(href='#')
+            picture
+              img(src='dist/images/logo-mobile.png' alt='logo' style='width:auto;')
+          ul.navbar-nav.ml-auto.ff-work
+            li.nav-item.active
+              a.nav-link(href='#')
+                | Clinician 
+            li.nav-item
+              a.nav-link(href='#') Profile
+            li.nav-item
+              a.nav-link(href='#') Billing
+            li.nav-item
+              a.nav-link(href='#') Messages    
+        .notification.dropdown
+          button.notification-bell(type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+            i.fas.fa-bell
+            .number.d-flex.align-items-center.justify-content-center 10
+          .notification-wrpaer.dropdown-menu(aria-labelledby="dropdownMenuButton")
+            .position-relative
+              ul.notifiaction-content
+                li
+                  a(href="#") Matched a clinician 
+                li
+                  a(href="#") New message from Dr. Frost 
+                li
+                  a(href="#") Call missed from Dr. Frost 
+                li
+                  a(href="#") Billing error
+                li
+                  a(href="#") New message from Dr. Frost         

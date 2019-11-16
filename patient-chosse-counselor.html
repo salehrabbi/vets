@@ -21,8 +21,37 @@
       <header class="main-header header-login bg-cloud-burst color-white">
         <div class="container-fluid">
           <div class="row">
-            <div class="col"><a href="#"><img src="dist/images/logo.png" alt=""></a></div>
-            <div class="col text-right"></div>
+            <nav class="navbar navbar-expand-md w-100 py-0"><a class="navbar-brand py-0" href="#">
+                <picture>
+                  <source media="(min-width: 768px)" srcset="dist/images/logo.png"><img src="dist/images/logo-mobile.png" alt="logo" style="width:auto;">
+                </picture></a>
+              <button class="navbar-toggler hamburger--squeeze hamburger" type="button" data-toggle="slide-collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="hamburger-box"><span class="hamburger-inner"></span></span></button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent"><a class="navbar-brand d-block d-md-none px-4 py-3 text-center" href="#">
+                  <picture><img src="dist/images/logo-mobile.png" alt="logo" style="width:auto;"></picture></a>
+                <ul class="navbar-nav ml-auto ff-work">
+                  <li class="nav-item active"><a class="nav-link" href="#">Clinician </a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Profile</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Billing</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#">Messages    </a></li>
+                </ul>
+              </div>
+              <div class="notification dropdown">
+                <button class="notification-bell" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i>
+                  <div class="number d-flex align-items-center justify-content-center">10</div>
+                </button>
+                <div class="notification-wrpaer dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div class="position-relative">
+                    <ul class="notifiaction-content">
+                      <li><a href="#">Matched a clinician </a></li>
+                      <li><a href="#">New message from Dr. Frost </a></li>
+                      <li><a href="#">Call missed from Dr. Frost </a></li>
+                      <li><a href="#">Billing error</a></li>
+                      <li><a href="#">New message from Dr. Frost         </a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </nav>
           </div>
         </div>
       </header>
