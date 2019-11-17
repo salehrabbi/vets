@@ -11,26 +11,26 @@ block main
           .row.align-items-center
             .col-md-8.plan-text
               .row.align-items-center
-                .col-sm-7.py-3
-                  h3.color-cloud-burst.ff-work.mb-0 Current Balance:
+                .col-sm-7.py-sm-3
+                  h3.color-cloud-burst.ff-work.mb-0.text-center.text-md-left Current Balance:
                 .price.col-sm-5
                   p.color-cloud-burst.ff-work.font-weight-bold.m-0 
                     | $79
                     span Ready to withdraw
-            .col-md-4
+            .col-md-4.mt-4.mt-md-0
               button.w-100.text-uppercase.font-small.btn.text-nowrap.input-submit.bg-tamarillo.button-hover.font-weight-bold.color-white.mx-auto(style="max-width: 125px;") withdraw
           .row.mt-3.pt-2.align-items-center
-            .col-md-8
-              p.font-big.font-weight-bold.color-cloud-burst.ff-work.m-0 Bank Account ending in:
-            .col-md-4.text-center
-              .button-hover.button-white.btn.font-weight-bold.ff-work.font-big.color-cloud-burst 5757  
+            .col-sm-8
+              p.font-big.font-weight-bold.color-cloud-burst.ff-work.m-0.text-center.text-md-left Bank Account ending in:
+            .col-sm-4.text-center
+              .button-hover.button-white.btn.font-weight-bold.ff-work.font-big.color-cloud-burst.mt-3.mt-sm-0 5757  
         form.credit-card.mt-4.pt-3.ff-work(action="#")
           h4.color-cloud-burst.font-weight-bold.ff-work.mb-3 Enter new bank details
           label.font-weight-bold.color-cloud-burst.font-medium(for="account") Account number:
           .d-grid
             -for (var x=0; x<1; x++)
               input.input-text.account-number(type="text" id="account")
-          .d-grid
+          .d-grid.grid-2
             label.font-weight-bold.color-cloud-burst.font-medium.m-0.card-number(for="card") 
               span.mb-2.d-block Routing number:
               .input-relative
@@ -40,21 +40,22 @@ block main
         .history
           h3.color-cloud-burst.ff-work.mb-0 History
           .book-time-controll.pb-2.pt-4
-            .row.align-items-center
-              .col-md-6
+            .row.align-items-center.m-0
+              .col-sm-6.col-9.p-0
                 p.color-manatee.m-0.font-weight-bold Monday 29th October
                   <i class="fas fa-calendar-alt ml-3"></i>
-              .col-md-6.text-right(style="font-size: 10px;")
+              .col-sm-6.text-right.col-3.p-0(style="font-size: 10px;")
                 .arrow.d-inline-block.mr-2
                   <i class="fal fa-angle-left"></i>  
                 .arrow.d-inline-block
-                  <i class="fal fa-angle-right"></i>   
-          table.table.table-striped
-            - for(var x=0; x<3; x++)
-              tr
-                td(width="20%") 30/10/2019
-                td(width="30%") Standard Plan
-                td.text-right $ 79 per month
+                  <i class="fal fa-angle-right"></i>      
+          .table-responsive
+            table.table.table-striped
+              - for(var x=0; x<3; x++)
+                tr
+                  td(width="20%") 30/10/2019
+                  td(width="30%") Standard Plan
+                  td.text-right $ 79 per month
           div(style="border-bottom: 1px solid #d5d5d5; padding-top: 20px;")      
 
 
