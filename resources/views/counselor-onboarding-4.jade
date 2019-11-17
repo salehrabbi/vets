@@ -10,12 +10,12 @@ block main
   .onboarding.onboarding-1.space
     .container
       .row
-        .col-md-6.color-tundora.pt-5
+        .col-lg-6.color-tundora.pt-lg-5
           h1.color-cloud-burst.mb-4 Help us match you with the right patient.
           p Please fill out this short questionnaire to provide some general and anonymous background about you and the issues you’d like to deal with in online therapy. 
           p This information will help us match you with the most suitable  clinician for you. Your answers will also give this clinician a good  starting point in getting to know you.
-        .col-md-6
-          form.box-card.ml-auto.question(action="#" style="max-width: 450px;")
+        .col-lg-6
+          form.box-card.mx-auto.ml-md-auto.mr-lg-0.question.mt-4.mt-lg-0(action="#" style="max-width: 450px;")
             .mb-0  
               h3.color-cloud-burst.position-relative.d-flex Scheduling
                 .step 4/5
@@ -27,7 +27,7 @@ block main
                 fieldset#group1
                   .row.m-0
                     each val, index in ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
-                      .col-md-4.p-0
+                      .col-md-4.col-sm-4.col-6.p-0
                         label.radio.d-flex.align-items-center(for=""+val)
                           input(type="radio" id=""+val name="group1" value="male")
                           span.font-medium.color-tundora= val
@@ -57,8 +57,8 @@ block main
                       .row.m-0
                         each val, index in ['Yes','No']
                           - var className = (index == 1) ? 'float-right' : ''
-                          .col-md-6.p-0
-                            label.radio.d-flex.align-items-center(for=""+val class=className)
+                          .col-md-6.col-3.p-0.mb-3.mb-md-0
+                            label.radio.d-flex.align-items-center.mb-0(for=""+val class=className)
                               input(type="radio" id=""+val name="group2" value="male")
                               span.font-medium.color-tundora= val
                   .col-md-6
@@ -76,5 +76,5 @@ block main
                 | Next question
                 <i class="fal fa-angle-right ml-2"></i>
             p.font-medium.mb-0.color-comet.mt-2.d-flex 
-              span.color-geraldine *
+              span.color-geraldine.mr-1 *
               | We need to get some from you before you are allowed to access the full platform

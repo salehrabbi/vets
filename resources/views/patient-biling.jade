@@ -16,11 +16,10 @@ block main
               p.color-cloud-burst.ff-work.font-weight-bold.m-0 
                 | $79
                 span Per Month
-
           .row.mt-3.align-items-center
-            .col-md-8
-              p.font-big.font-weight-bold.color-cloud-burst.ff-work.m-0 Your current Card ending in:
-            .col-md-4.text-center
+            .col-sm-8.mb-3.mb-sm-0
+              p.font-big.font-weight-bold.color-cloud-burst.ff-work.m-0.text-center.text-sm-left Your current Card ending in:
+            .col-sm-4.text-center
               .button-hover.button-white.btn.font-weight-bold.ff-work.font-big.color-cloud-burst 5757  
         form.credit-card.mt-4.pt-3.ff-work(action="#")
           h4.color-cloud-burst.font-weight-bold.ff-work.mb-3 Enter new card details 
@@ -28,14 +27,14 @@ block main
           .d-grid
             -for (var x=0; x<4; x++)
               input.input-text(type="text")
-          .d-grid
+          .d-grid.grid-2
             label.font-weight-bold.color-cloud-burst.font-medium.m-0(for="calender") 
-              span.mb-2.d-block Card number:
+              span.mb-2.d-block Expiry Date:
               .input-relative
                 <input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="04/24">
                 <i class="fas fa-calendar-alt"></i>   
             label.font-weight-bold.color-cloud-burst.font-medium.m-0(for="calender") 
-              span.mb-2.d-block Card number:
+              span.mb-2.d-block CVC/CVC2:
               .input-relative
                 input.input-text.mb-0(type="text")
             .align-self-end.submit
@@ -43,21 +42,22 @@ block main
         .history
           h3.color-cloud-burst.ff-work.mb-0 History
           .book-time-controll.pb-2.pt-4
-            .row.align-items-center
-              .col-md-6
+            .row.align-items-center.m-0
+              .col-sm-6.col-9.p-0
                 p.color-manatee.m-0.font-weight-bold Monday 29th October
                   <i class="fas fa-calendar-alt ml-3"></i>
-              .col-md-6.text-right(style="font-size: 10px;")
+              .col-sm-6.text-right.col-3.p-0(style="font-size: 10px;")
                 .arrow.d-inline-block.mr-2
                   <i class="fal fa-angle-left"></i>  
                 .arrow.d-inline-block
                   <i class="fal fa-angle-right"></i>   
-          table.table.table-striped
-            - for(var x=0; x<3; x++)
-              tr
-                td(width="20%") 30/10/2019
-                td(width="30%") Standard Plan
-                td.text-right $ 79 per month
+          .table-responsive
+            table.table.table-striped
+              - for(var x=0; x<3; x++)
+                tr
+                  td(width="20%") 30/10/2019
+                  td(width="30%") Standard Plan
+                  td.text-right $ 79 per month
           div(style="border-bottom: 1px solid #d5d5d5; padding-top: 20px;")      
 
 

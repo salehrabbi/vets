@@ -30,6 +30,7 @@ $('[data-toggle="slide-collapse"]').on("click", function() {
 
 $(".navbar-toggler").click(function() {
   $(this).toggleClass("is-active");
+  $("body").toggleClass("is-active");
 });
 
 // $(".notification-bell").click(function() {

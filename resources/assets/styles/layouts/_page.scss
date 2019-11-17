@@ -7,11 +7,17 @@
       font-size: em(40px);
       line-height: (47/40);
       margin-bottom: calc-em(20, 40);
+      @include sm {
+        font-size: 1.8em;
+      }
     }
     h3 {
       font-size: em(22px);
       line-height: (26/22);
       margin-bottom: calc-em(15, 22);
+      @include sm {
+        font-size: 1.3em;
+      }
     }
   }
   form {
@@ -28,6 +34,9 @@
     .d-grid {
       grid-template-columns: auto auto;
       grid-column-gap: em(30px);
+      @include sm {
+        grid-column-gap: 14px;
+      }
     }
   }
 }
@@ -35,6 +44,14 @@
 .form-step {
   position: relative;
   max-width: 850px;
+  @include sm {
+    display: none;
+  }
+  .title {
+    @include md {
+      font-size: 12px !important;
+    }
+  }
   .step-border {
     background-image: linear-gradient(to right, transparent 50%, #c6c9d1 50%);
     height: 1px;
@@ -60,6 +77,7 @@
       align-items: center;
       position: relative;
     }
+
     &.active {
       .step-number {
         background: $crimson;
@@ -96,6 +114,9 @@
 // ========================== .mathin-counselor
 .mathin-counselor-content {
   min-height: 600px;
+  @include sm {
+    min-height: auto;
+  }
 }
 // ============================== choose-counselor
 .choose-counselor {
@@ -106,20 +127,33 @@
     padding: em(30px);
     margin-bottom: em(30px);
     border: 1px solid transparent;
+    @include lg {
+      padding: 1em;
+    }
     .avator {
       img {
         height: em(80px);
         width: em(80px);
         border-radius: 8px;
         margin-right: em(30px);
+        @include lg {
+          margin-right: 1em;
+        }
       }
     }
     .title {
       font-size: em(22px);
+      @include lg {
+        font-size: 1em;
+      }
     }
     .d-grid {
       grid-template-columns: auto auto;
       grid-column-gap: em(30px);
+      @include lg {
+        grid-template-columns: 1fr;
+        grid-row-gap: 15px;
+      }
     }
     &.active {
       background: transparent;
@@ -144,12 +178,21 @@
 .choose-timeslot-content {
   max-width: 570px;
   padding-top: em(80px);
+  @include md {
+    padding-top: em(50px);
+  }
+  @include sm {
+    padding-top: 0;
+  }
   form {
     .d-grid {
       display: grid;
       grid-template-columns: 1fr em(90px);
       grid-column-gap: 30px;
       grid-row-gap: 20px;
+      @include sm {
+        grid-column-gap: 20px;
+      }
     }
   }
 }
@@ -185,6 +228,14 @@
   }
 }
 .time-slot-radio {
+  @include sm {
+    margin: 0 -4px;
+  }
+  .col-6 {
+    @include sm {
+      padding: 0 4px;
+    }
+  }
   .radio {
     background: #f4f4f6;
     border-radius: 5px;
@@ -194,6 +245,12 @@
     margin-bottom: 0;
     color: rgba(64, 64, 64, 0.7);
     font-size: 16px;
+    @include sm {
+      padding: 7px 14px;
+    }
+    span {
+      white-space: nowrap;
+    }
     &.checked {
       background: none;
       border-color: #e4e7ef;
@@ -215,12 +272,20 @@
     grid-template-columns: 150px auto;
     grid-column-gap: 35px;
     align-items: center;
+    @include sm {
+      grid-template-columns: 120px auto;
+      grid-column-gap: 20px;
+    }
   }
   .img {
     img {
       width: 150px;
       height: 150px;
       border-radius: 5px;
+      @include sm {
+        width: 120px;
+        height: 120px;
+      }
     }
   }
   .text {
@@ -238,8 +303,14 @@
   .plan {
     padding: 30px;
     border-radius: 5px;
+    @include sm {
+      padding: 15px 20px;
+    }
     .plan-text {
       border-right: 1px solid #c6c9d1;
+      @include md {
+        border: none;
+      }
     }
     .price {
       p {
@@ -257,9 +328,22 @@
     .d-grid {
       grid-template-columns: repeat(4, 1fr);
       grid-column-gap: 23px;
+      @include sm {
+        grid-column-gap: 15px;
+        // grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .grid-2 {
+      @include sm {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
     .submit {
       grid-column: 3/-1;
+      @include sm {
+        grid-column: 1/-1;
+        margin-top: 15px;
+      }
     }
   }
 }
@@ -273,6 +357,7 @@
     padding: 9px 20px;
     border: none;
     color: $tundora;
+    white-space: nowrap;
   }
 }
 
@@ -512,7 +597,9 @@
       align-items: center;
       p {
         padding-left: 26px;
-        width: calc(100);
+        @include sm {
+          padding-left: 13px;
+        }
       }
     }
   }

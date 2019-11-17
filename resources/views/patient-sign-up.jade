@@ -16,23 +16,23 @@ block main
               | Sign up 
               br 
               | for an account
-            h3.ff-work.color-cloud-burst.font-weight-bold Account type
+            h3.ff-work.color-cloud-burst.font-weight-bold.mb-4 Account type
             form.row.color-tundora(action="#")
-              .col-md-6
+              .col-6
                 label.radio.d-flex.align-items-center(for="Patient")
                   input(type="radio" id="Patient" name="gender" value="male" checked)
                   span Patient
-              .col-md-6
+              .col-6
                 label.radio.d-flex.align-items-center(for="Clinician")
                   input(type="radio" id="Clinician" name="gender" value="female")
                   span Clinician    
-              .col-12.mt-4
+              .col-12.mt-sm-4.mt-2
                 input.input-text(type="text" placeholder="Your e-mail address")
               .col-12
                 input.input-text(type="text" placeholder="Your password")      
               .col-12.mt-2.mb-4
                 button.button.btn.bg-tamarillo.w-100.color-white.font-weight-bold.ff-work.input-submit(type="button") Sign up new account
-              .d-grid.w-100.align-items-center.color-boulder
+              .col-12.d-grid.w-100.align-items-center.color-boulder
                 .column.bg-alabaster.form-social.mt-2
                   a.d-flex.align-items-center.justify-content-center.text-decoration-none.color-boulder(href="#")
                     img(src="dist/images/google.png" alt="")
@@ -43,7 +43,7 @@ block main
                   a.d-flex.align-items-center.justify-content-center.text-decoration-none.color-boulder(href="#")
                     img(src="dist/images/facebook.png" alt="")
                     span Facebook
-              .col-md-6.px-0.mt-4
+              .col-sm-6.px-0.mt-4
                 a.color-comet.ff-work.font-small.pt-2(href="#") Already have an account?
-              .col-md-6.px-0.text-right.mt-4
+              .col-sm-6.px-0.text-sm-right.text-center.mt-sm-4.mt-2
                 a.color-comet.ff-work.font-small.pt-2(href="#") Forgot password        

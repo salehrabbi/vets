@@ -24,10 +24,10 @@ block main
             button.ff-work.input-submit.bg-tamarillo.font-weight-bold.text-uppercase.color-white.font-medium(type="submit") 
               | Go
           .book-time-controll.pb-2.pt-4.mt-2
-            .row.align-items-center
-              .col-md-6
+            .row.align-items-center.m-0
+              .col-sm-6.col-8.p-0
                 h4.color-cloud-burst.m-0 Monday 29th October
-              .col-md-6.text-right
+              .col-sm-6.col-4.text-right.p-0
                 .arrow.d-inline-block.mr-2
                   <i class="fal fa-angle-left"></i>  
                 .arrow.d-inline-block
@@ -35,7 +35,7 @@ block main
           .row.time-slot-radio
             - for(var x=0; x<8; x++)
               - var className = (x == 7) ? 'checked' : ''
-              .col-md-6
+              .col-6
                 label.radio.d-flex.align-items-center(for="Patient" + x class=className)
                   input(type="radio" id="Patient" + x name="gender" value="male" checked=className)
                   span 09:00 am       
