@@ -12,6 +12,9 @@ body {
   &.is-active {
     height: 100vh;
     overflow: hidden;
+    .chat-area-height {
+      overflow: hidden !important;
+    }
   }
 }
 .container {

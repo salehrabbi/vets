@@ -366,7 +366,16 @@
   overflow: hidden;
   > .d-grid {
     grid-template-columns: 1fr 3fr;
-    grid-template-rows: calc(100vh - 174px);
+    // grid-template-rows: calc(100vh - 175px);
+    @include xl {
+      grid-template-columns: 1.5fr 3fr;
+    }
+    @include lg {
+      grid-template-columns: 2fr 3fr;
+    }
+    @include md {
+      grid-template-columns: 1fr;
+    }
   }
   .chat-list {
     position: relative;
@@ -402,6 +411,10 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 110px;
+    @include md {
+      display: none;
+      grid-template-rows: auto 70px;
+    }
     .chat-date {
       color: #c6c9d1;
       margin: 30px 0;
@@ -434,8 +447,19 @@
       grid-template-columns: auto 50px;
       grid-column-gap: 30px;
       padding-top: 30px;
+      @include lg {
+        grid-template-columns: 1fr;
+      }
+      .img {
+        @include lg {
+          display: none;
+        }
+      }
       &.left {
         grid-template-columns: 50px auto;
+        @include lg {
+          grid-template-columns: 1fr;
+        }
         .text {
           order: 2;
           .chat-text {
@@ -476,6 +500,9 @@
     }
     .send-message {
       .img {
+        @include lg {
+          display: none;
+        }
         img {
           border-radius: 5px;
         }
@@ -486,12 +513,39 @@
       background: #fff;
       padding: 30px;
       align-items: center;
+      @include lg {
+        grid-template-columns: 1fr;
+      }
+      @include md {
+        padding: 12px 20px;
+      }
       .message {
         border: 1px solid #d5d5d5;
         border-radius: 5px 50px 50px 5px;
         overflow: hidden;
         button {
           width: 150px;
+          @include md {
+            font-size: 0;
+          }
+        }
+      }
+    }
+    @include md {
+      .send-message {
+        display: block;
+        .message {
+          border-radius: 5px;
+          button {
+            background: none;
+            border: none;
+            width: auto;
+            svg {
+              path {
+                fill: #a80f14;
+              }
+            }
+          }
         }
       }
     }
@@ -514,45 +568,93 @@
         }
       }
     }
-    .call-screen {
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      .call-action {
-        display: flex;
+  }
+  // ======================= call
+  .call-screen {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    .call-action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      bottom: 30px;
+      a {
+        width: 44px;
+        height: 44px;
+        background: #fff;
+        border-radius: 50%;
+        display: inline-flex;
         justify-content: center;
         align-items: center;
-        position: absolute;
-        width: 100%;
-        left: 0;
-        bottom: 30px;
+        margin: 0 (25px/2);
+        font-size: 20px;
+        text-decoration: none;
+        transition: 0.3s;
+        &:hover {
+          background: #a80f14;
+          color: #fff;
+          path {
+            fill: #fff;
+          }
+        }
+      }
+      .phone {
+        transform: rotate(-135deg);
+        background: #a80f14;
+        color: #fff;
+      }
+    }
+    // ====================== chat top
+
+    &.chat-top {
+      .call-action {
         a {
-          width: 44px;
-          height: 44px;
-          background: #fff;
-          border-radius: 50%;
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          margin: 0 (25px/2);
-          font-size: 20px;
-          text-decoration: none;
-          transition: 0.3s;
+          height: 34px;
+          width: 34px;
+          background: #f4f4f6;
+          font-size: 16px;
+          margin: 0 6px;
+          border: 2px solid transparent;
           &:hover {
-            background: #a80f14;
-            color: #fff;
+            border-color: #1c2945;
+            color: #1c2945;
             path {
-              fill: #fff;
+              fill: #1c2945;
+            }
+          }
+          &.phone {
+            background: #a80f14;
+            &:hover {
+              color: #fff;
+              border-color: transparent;
             }
           }
         }
-        .phone {
-          transform: rotate(-135deg);
-          background: #a80f14;
-          color: #fff;
-        }
       }
     }
+  }
+  .chat-back {
+    background: rgba(255, 255, 255, 0.88);
+    position: absolute;
+    width: 100%;
+    z-index: 9;
+    display: none;
+    padding: 5px 0;
+    @include md {
+      display: block;
+    }
+  }
+  #back {
+    color: #be4b4f;
+    font-size: 12px;
+    font-weight: bold;
+    font-weight: $w;
+    border: none;
+    background: none;
   }
   // ====================n3
   &.n-3 {
@@ -571,6 +673,17 @@
   &.n-4 {
     .video-connecting {
       align-self: center;
+    }
+  }
+  // ========================== mobile
+  @include md {
+    &.show {
+      .chat-list {
+        display: none;
+      }
+      .chat-area {
+        display: grid;
+      }
     }
   }
 }

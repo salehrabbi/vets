@@ -36,3 +36,23 @@ $(".navbar-toggler").click(function() {
 // $(".notification-bell").click(function() {
 //   $(".notification").removeClass("show");
 // });
+
+$h = $(".main-header").outerHeight();
+$f = $(".main-footer").outerHeight();
+var total = $h + $f;
+$(".caunselor-after-match > .d-grid").css(
+  "grid-template-rows",
+  "calc(100vh - " + total + "px)"
+);
+
+$(".caunselor-after-match .avator").click(function() {
+  $(this)
+    .parents(".caunselor-after-match")
+    .toggleClass("show");
+});
+
+$(".back").click(function() {
+  $(this)
+    .parents(".caunselor-after-match")
+    .removeClass("show");
+});
