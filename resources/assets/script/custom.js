@@ -18,7 +18,7 @@ $("input:radio").checkradios({
   }
 });
 
-$("#demo").datetimepicker({
+$(".calender-table").datetimepicker({
   date: new Date()
 });
 
@@ -54,5 +54,5 @@ $(".caunselor-after-match .avator").click(function() {
 $(".back").click(function() {
   $(this)
     .parents(".caunselor-after-match")
-    .removeClass("show");
+    .toggleClass("show");
 });

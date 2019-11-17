@@ -6,7 +6,7 @@ block title
 block main
   .space
     .container
-      .form-step.mx-auto
+      .form-step.mx-auto.pb-sm-4
         .step-border
         .d-grid.text-center.font-medium.font-weight-bold.ff-work
           each val, index in ['Matching Clinicians', 'Choose Clinician', 'Choose Timeslot', 'Consultation']
@@ -14,8 +14,8 @@ block main
             .step-part(class=className)
               .mx-auto.step-number.color-white.bg-manatee.mb-3= index+1
               .title.color-manatee= val
-      .choose-counselor.consltation-content.mx-auto.pt-4
-        .row.pt-sm-5
+      .choose-counselor.consltation-content.mx-auto.pt-5
+        .row
           .col-md-12.text-center
             h3.color-cloud-burst Consultation Booked
             p.color-tundora.mx-auto.mb-4(style="max-width: 370px;") You will get an email 30 minutes before, to remind you about booking.

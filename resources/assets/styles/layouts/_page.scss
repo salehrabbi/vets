@@ -44,12 +44,12 @@
 .form-step {
   position: relative;
   max-width: 850px;
-  @include sm {
-    display: none;
-  }
   .title {
     @include md {
       font-size: 12px !important;
+    }
+    @include sm {
+      display: none;
     }
   }
   .step-border {
@@ -114,7 +114,7 @@
 // ========================== .mathin-counselor
 .mathin-counselor-content {
   min-height: 600px;
-  @include sm {
+  @include lg {
     min-height: auto;
   }
 }
@@ -585,7 +585,7 @@
       a {
         width: 44px;
         height: 44px;
-        background: #fff;
+        background: #f4f4f6;
         border-radius: 50%;
         display: inline-flex;
         justify-content: center;
@@ -661,12 +661,22 @@
     .chat-area {
       border-right: 1px solid #c6c9d1;
     }
-    .choose-timeslot-content {
+    .time-slot-wraper-height {
       padding-top: 0;
       align-self: center;
-      padding: 30px 0;
+      padding: 30px 15px 0 15px;
       overflow-y: auto;
       overflow-x: hidden;
+      .choose-timeslot-content {
+        padding-bottom: 40px;
+        @include md {
+          padding-bottom: 80px;
+        }
+      }
+      @media (max-height: 640px) {
+        align-self: initial;
+        overflow-y: auto;
+      }
     }
   }
   // =========================n4
@@ -678,11 +688,21 @@
   // ========================== mobile
   @include md {
     &.show {
-      .chat-list {
+      .chat-list,
+      .video-connecting,
+      .time-slot-wraper-height {
         display: none;
       }
       .chat-area {
         display: grid;
+      }
+      .call-action {
+        display: none;
+      }
+      .chat-top {
+        .call-action {
+          display: flex;
+        }
       }
     }
   }
@@ -744,6 +764,10 @@
 // ========================================= .date-calander
 .date-calander {
   max-width: 496px;
+  @include sm {
+    width: 360px;
+    margin: 0 auto;
+  }
   .setting {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -753,6 +777,13 @@
     position: relative;
     z-index: 999999999;
     background: #fff;
+    @include sm {
+      grid-column-gap: 15px;
+      .input-submit {
+        font-size: 13px;
+        padding: 9px;
+      }
+    }
   }
   .perfect-datetimepicker {
     border: none;
@@ -780,6 +811,9 @@
       i {
         position: relative;
         left: 20px;
+        @include sm {
+          left: 0;
+        }
       }
     }
     table.buttonpane {
@@ -809,6 +843,10 @@
         border-radius: 0;
         width: 70px;
         height: 70px;
+        @include sm {
+          width: 50px;
+          height: 50px;
+        }
       }
       tbody {
         tr {
@@ -874,8 +912,15 @@
         i {
           position: relative;
           left: 70px;
+          @include sm {
+            left: 40px;
+          }
         }
       }
     }
   }
+}
+
+// =========================== calender-table
+#calender-table {
 }

@@ -6,7 +6,7 @@ block title
 block main
   .space
     .container
-      .form-step.mx-auto
+      .form-step.mx-auto.pb-sm-4
         .step-border
         .d-grid.text-center.font-medium.font-weight-bold.ff-work
           each val, index in ['Matching Clinicians', 'Choose Clinician', 'Choose Timeslot', 'Consultation']
@@ -14,7 +14,7 @@ block main
             .step-part(class=className)
               .mx-auto.step-number.color-white.bg-manatee.mb-3= index+1
               .title.color-manatee= val
-      .choose-timeslot-content.mx-auto
+      .choose-timeslot-content.mx-auto.pt-5
         form(action="#")
           label.color-cloud-burst.font-weight-bold.ff-work(for="calender") Search for a specific date:
           .d-grid

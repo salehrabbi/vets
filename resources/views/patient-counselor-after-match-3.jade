@@ -7,6 +7,27 @@ block main
   .caunselor-after-match.n-2.n-3
     .d-grid
       .chat-area
+        .chat-back
+          .row.m-0.align-items-center
+            .col-4
+              button#back.back Back
+            .col-8
+              .call-screen.chat-top
+                .call-action.position-static.justify-content-end
+                  a.color-cloud-burst(href="#")
+                    <i class="far fa-microphone"></i>
+                  a(href="#")  
+                    <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.1 0C3.6333 0 0 3.6342 0 8.1C0 11.0952 1.638 13.7088 4.0617 15.111L2.2014 16.3512C1.872 16.5708 1.7244 16.9812 1.8396 17.361C1.9548 17.7408 2.304 18 2.7 18H13.5C13.896 18 14.2461 17.7408 14.3613 17.361C14.4765 16.9812 14.3289 16.5708 13.9995 16.3512L12.1392 15.111C14.562 13.7088 16.2 11.0952 16.2 8.1C16.2 3.6342 12.5667 0 8.1 0ZM8.1 14.4C4.6269 14.4 1.8 11.5731 1.8 8.1C1.8 4.626 4.6269 1.8 8.1 1.8C11.5731 1.8 14.4 4.626 14.4 8.1C14.4 11.5731 11.5731 14.4 8.1 14.4Z" fill="#1C2945"/>
+                      <path d="M8.09961 3.59961C5.61831 3.59961 3.59961 5.61831 3.59961 8.09961C3.59961 10.5809 5.61831 12.5996 8.09961 12.5996C10.5809 12.5996 12.5996 10.5809 12.5996 8.09961C12.5996 5.61831 10.5809 3.59961 8.09961 3.59961ZM8.09961 10.7996C6.61101 10.7996 5.39961 9.58821 5.39961 8.09961C5.39961 6.61101 6.61101 5.39961 8.09961 5.39961C9.58821 5.39961 10.7996 6.61101 10.7996 8.09961C10.7996 9.58821 9.58821 10.7996 8.09961 10.7996Z" fill="#1C2945"/>
+                    </svg>
+                  a.back(href="#")
+                    <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.8 10.5231V13L5.5662 10.5231H8.4C9.0618 10.5231 9.6 9.93317 9.6 9.20773V3.94617C9.6 3.22073 9.0618 2.63078 8.4 2.63078H1.2C0.5382 2.63078 0 3.22073 0 3.94617V9.20773C0 9.93317 0.5382 10.5231 1.2 10.5231H1.8ZM1.2 3.94617H8.4V9.20773H5.2338L3 10.677V9.20773H1.2V3.94617Z" fill="#1C2945"/>
+                      <path d="M10.8 0H3.6C2.9382 0 2.4 0.589952 2.4 1.31539H9.6C10.2618 1.31539 10.8 1.90534 10.8 2.63078V7.89234C11.4618 7.89234 12 7.30239 12 6.57695V1.31539C12 0.589952 11.4618 0 10.8 0Z" fill="#1C2945"/>
+                    </svg>
+                  a.phone(href="#")
+                    <i class="far fa-phone"></i>
         .chat-area-height 
           - for(var x=0; x<3; x++) 
             .chat-content.left
@@ -23,28 +44,45 @@ block main
                 <path d="M11.064 6.55036C10.8125 6.44255 10.5211 6.49334 10.3208 6.67978C10.1206 6.86631 10.0493 7.15341 10.139 7.41188L13.088 15.9151L32.9153 15.9153L11.064 6.55036Z" fill="#A80F14"/>
                 <path d="M13.0879 17.2973L10.1388 25.8006C10.0519 26.0514 10.1164 26.3289 10.303 26.5156C10.3088 26.5214 10.3147 26.527 10.3208 26.5327C10.521 26.7192 10.8124 26.77 11.0639 26.6622L32.9153 17.2973L13.0879 17.2973Z" fill="#A80F14"/>
               </svg>
-      .choose-timeslot-content.mx-auto
-        form(action="#")
-          label.color-cloud-burst.font-weight-bold.ff-work(for="calender") Search for a specific date:
-          .d-grid
-            .input-relative
-              <input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="Day/Month/Year">
-              <i class="fas fa-calendar-alt"></i>
-            button.ff-work.input-submit.bg-tamarillo.font-weight-bold.text-uppercase.color-white.font-medium(type="submit") 
-              | Go
-          .book-time-controll.pb-2.pt-4.mt-2
-            .row.align-items-center
-              .col-md-6
-                h4.color-cloud-burst.m-0 Monday 29th October
-              .col-md-6.text-right
-                .arrow.d-inline-block.mr-2
-                  <i class="fal fa-angle-left"></i>  
-                .arrow.d-inline-block
-                  <i class="fal fa-angle-right"></i> 
-          .row.time-slot-radio
-            - for(var x=0; x<8; x++)
-              - var className = (x == 7) ? 'checked' : ''
-              .col-md-6
-                label.radio.d-flex.align-items-center(for="Patient" + x class=className)
-                  input(type="radio" id="Patient" + x name="gender" value="male" checked=className)
-                  span 09:00 am
+      .time-slot-wraper-height        
+        .choose-timeslot-content.mx-auto.pt-0
+          form(action="#")
+            label.color-cloud-burst.font-weight-bold.ff-work(for="calender") Search for a specific date:
+            .d-grid
+              .input-relative
+                <input id="calender" class="input-text mb-0" data-toggle="datepicker" placeholder="Day/Month/Year">
+                <i class="fas fa-calendar-alt"></i>
+              button.ff-work.input-submit.bg-tamarillo.font-weight-bold.text-uppercase.color-white.font-medium(type="submit") 
+                | Go
+            .book-time-controll.pb-2.pt-4.mt-2
+              .row.align-items-center.m-0
+                .col-sm-7.col-8.p-0
+                  h4.color-cloud-burst.m-0 Monday 29th October
+                .col-sm-5.col-4.text-right.p-0
+                  .arrow.d-inline-block.mr-2
+                    <i class="fal fa-angle-left"></i>  
+                  .arrow.d-inline-block
+                    <i class="fal fa-angle-right"></i> 
+            .row.time-slot-radio
+              - for(var x=0; x<8; x++)
+                - var className = (x == 7) ? 'checked' : ''
+                .col-6
+                  label.radio.d-flex.align-items-center(for="Patient" + x class=className)
+                    input(type="radio" id="Patient" + x name="gender" value="male" checked=className)
+                    span 09:00 am
+      .call-screen.d-blcok.d-md-none
+        .call-action.bg-white(style="bottom: 0; padding: 5px 0;")
+          a.color-cloud-burst(href="#")
+            <i class="far fa-microphone"></i>
+          a(href="#")  
+            <svg width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.1 0C3.6333 0 0 3.6342 0 8.1C0 11.0952 1.638 13.7088 4.0617 15.111L2.2014 16.3512C1.872 16.5708 1.7244 16.9812 1.8396 17.361C1.9548 17.7408 2.304 18 2.7 18H13.5C13.896 18 14.2461 17.7408 14.3613 17.361C14.4765 16.9812 14.3289 16.5708 13.9995 16.3512L12.1392 15.111C14.562 13.7088 16.2 11.0952 16.2 8.1C16.2 3.6342 12.5667 0 8.1 0ZM8.1 14.4C4.6269 14.4 1.8 11.5731 1.8 8.1C1.8 4.626 4.6269 1.8 8.1 1.8C11.5731 1.8 14.4 4.626 14.4 8.1C14.4 11.5731 11.5731 14.4 8.1 14.4Z" fill="#1C2945"/>
+              <path d="M8.09961 3.59961C5.61831 3.59961 3.59961 5.61831 3.59961 8.09961C3.59961 10.5809 5.61831 12.5996 8.09961 12.5996C10.5809 12.5996 12.5996 10.5809 12.5996 8.09961C12.5996 5.61831 10.5809 3.59961 8.09961 3.59961ZM8.09961 10.7996C6.61101 10.7996 5.39961 9.58821 5.39961 8.09961C5.39961 6.61101 6.61101 5.39961 8.09961 5.39961C9.58821 5.39961 10.7996 6.61101 10.7996 8.09961C10.7996 9.58821 9.58821 10.7996 8.09961 10.7996Z" fill="#1C2945"/>
+            </svg>
+          a.back(href="#")
+            <svg width="12" height="13" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.8 10.5231V13L5.5662 10.5231H8.4C9.0618 10.5231 9.6 9.93317 9.6 9.20773V3.94617C9.6 3.22073 9.0618 2.63078 8.4 2.63078H1.2C0.5382 2.63078 0 3.22073 0 3.94617V9.20773C0 9.93317 0.5382 10.5231 1.2 10.5231H1.8ZM1.2 3.94617H8.4V9.20773H5.2338L3 10.677V9.20773H1.2V3.94617Z" fill="#1C2945"/>
+              <path d="M10.8 0H3.6C2.9382 0 2.4 0.589952 2.4 1.31539H9.6C10.2618 1.31539 10.8 1.90534 10.8 2.63078V7.89234C11.4618 7.89234 12 7.30239 12 6.57695V1.31539C12 0.589952 11.4618 0 10.8 0Z" fill="#1C2945"/>
+            </svg>  
+          a.phone(href="#")
+            <i class="far fa-phone"></i>              
